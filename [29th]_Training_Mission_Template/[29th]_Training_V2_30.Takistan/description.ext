@@ -1,0 +1,127 @@
+class Header
+{
+	maxPlayers = 197;
+	minPlayers = 1;
+	gameType = Sandbox;
+};
+
+// =========================== Loading Screen
+Author = "CW3 Hill";
+loadScreen =  "Pictures\116Inf InsigniaAlpha.paa";
+OnLoadName = "29th Training V2.30";
+//OnLoadMission = "NATO | CSAT | AAF Training Tandbox";
+OnLoadMission = "<t align='center'><t size='1.5' color='#2A1ADC'>NATO</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>CSAT</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>AAF</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
+OnLoadMissionTime = 1;
+OverviewText = "<t align='center'><t size='1.5' color='#2A1ADC'>NATO</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>CSAT</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>AAF</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
+//OverviewPicture = "Pictures\116Inf InsigniaAlpha.paa";
+
+// =========================== Admin
+enableDebugConsole = 1;		// <!-- Enable the debug console where (0=disabled),(1=Admins Only),(2=Everyone) DO NOT SET AS 2!
+//onPauseScript = "scripts\onPause.sqf";  //  Script to execute when ESC is pressed - this one Disables access to the field manual from the menu
+allowFunctionsLog = 0; 									// Log functions to .rpt. disabled with 0
+
+// =========================== Includes
+#include "scripts\voice_control\voiceControl.cpp"
+
+// =========================== Misc
+disableChannels[]	= {2,6};	// <!-- Restrict chat channels where (0=Global),(1=Side),(2=Command),(3=Group),(4=Vehicle),(5=Direct),(6=System)
+DisabledAI = 1;								// <!-- Where 0 Fills empty playable slots with AI, 1 is They Don't fill the empty slots
+joinUnassigned = 1;					// <!-- Where 0 forces joining players into the first empty slot, 1 leaves them to select their own
+debriefing = 1;
+showUAVFeed  = 1;					// Enables/Disables the UAV Feed. Zeus-related.
+
+// =========================== Respawn
+respawn = 3;  // 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_<SIDE> marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+respawnDelay = 10;
+respawnDialog = 0;
+respawnTemplates[] = {/*"Revive",*/"MenuPosition","MenuInventory","EndMission","Tickets","Spectator"/*,"Counter"*/};
+//respawnTemplatesWest[] = {/*"Revive",*/"MenuPosition","MenuInventory","EndMission","Tickets","Spectator"/*,"Counter"*/};
+//respawnTemplatesEast[] = {/*"Revive",*/"MenuPosition","MenuInventory","EndMission","Tickets","Spectator"/*,"Counter"*/};
+//respawnTemplatesGuer[] = {/*"Revive",*/"MenuPosition","MenuInventory","EndMission","Tickets","Spectator"/*,"Counter"*/};
+respawnTemplatesCiv[] = {/*"Revive",*/"MenuPosition","MenuInventory","EndMission",/*"Tickets",*/"Spectator"/*,"Counter"*/};
+respawnOnStart = 0; // respawn player when he joins the game. Available only for INSTANT (2) and BASE (3) respawn types.
+
+// =========================== Revive
+//reviveDelay = 12;  //  The time it takes to revive an incapacitated unit (default: 6 seconds). Having a Medikit will halve this time. Must have "Revive" Respawn template enabled.
+//reviveForceRespawnDelay = 15;  //  The time it takes for an incapacitated unit to force their respawn (default: 3 seconds). Must have "Revive" Respawn template enabled.
+//reviveBleedOutDelay = 150;  //  The time it takes for a unit to bleed out (default: 2 minutes). Must have "Revive" Respawn template enabled.
+
+// =========================== Corpse Management
+corpseManagerMode = 1;	// All units
+corpseLimit = 10;
+corpseRemovalMinTime = 10;
+corpseRemovalMaxTime = 240;
+
+// ==================================== Configs
+
+// =========================== Task Markers
+/*
+taskManagement_markers2D = 1; //0: do not use new 2D markers (default), 1: replace task markers with new 2D markers 
+taskManagement_markers3D = 1; //0: do not use new 3D markers (default), 1: replace task waypoints with new 3D markers 
+taskManagement_propagate = 1; //0: do not propagate (default), 1: propagate shared tasks to subordinates 
+taskManagement_drawDist  = 2000; //3D marker draw distance (default: 2000)
+*/
+/*class CfgTaskEnhancements
+{
+   enable       = 1;            //0: disable new task features (default), 1: enable new task features & add new task markers and task widgets into the map
+   3d           = 1;								//0: do not use new 3D markers (default), 1: replace task waypoints with new 3D markers
+   3dDrawDist   = 100;		//3d marker draw distance (default: 2000)
+   share        = 1;							//0: do not count assigned players (default), 1: count how many players have the task assigned
+   propagate    = 1;					//0: do not propagate (default), 1: propagate shared tasks to subordinates
+};*/
+
+class CfgNotifications 
+{
+	class Default
+	{
+		title = ""; 			// Tile displayed as text on black background. Filled by arguments.
+		iconPicture = ""; 		// Small icon displayed in left part. Colored by "color", filled by arguments.
+		iconText = ""; 			// Short text displayed over the icon. Colored by "color", filled by arguments.
+		description = ""; 		// Brief description displayed as structured text. Colored by "color", filled by arguments.
+		color[] = {1,1,1,1}; 	// Icon and text color
+		duration = 5; 			// How many seconds will the notification be displayed
+		priority = 0; 			// Priority; higher number = more important; tasks in queue are selected by priority
+		difficulty[] = {}; 		// Required difficulty settings. All listed difficulties has to be enabled
+	};
+	class General
+	{
+		title = "%1";
+		description = "%2";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		duration = 4;
+		priority = 1;
+	};
+};
+
+class CfgFunctions 
+{
+	#include "functions\curator\CfgFunctions.hpp"  // Curator sync https://forums.bistudio.com/topic/166808-making-placed-units-be-editable-for-every-zeus/#entry2607581
+	
+	class 29th_Training
+	{
+		tag = "Hill";
+		class 29th
+		{
+			file = "functions";
+			class removeAllRespawnInventory
+			{
+//				postInit = 1;
+			};
+		};
+	};
+	
+};
+
+class Params
+{
+
+	class disabledTI // paramsArray select 0;
+  {
+		title = "Allow thermal imaging optics?";
+		values[] = {0,1};
+		texts[] = {"No","Yes (Default)"};
+		default = 1;
+  };
+	
+};
