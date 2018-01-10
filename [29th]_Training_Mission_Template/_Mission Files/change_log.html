@@ -5,11 +5,10 @@
   <title>Arma 3 Training Mission Template Change Log</title>
   <link rel="icon" type="image/png" href="http://www.29th.org/images/29thPatch03.ico"/>
   
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Change Log for the 29th Infantry Division's Arma 3 training mission template">
-  <meta name="keywords" content="29thID,29th,29th Infantry Division,Training Mission,Change Log">
-  <meta name="author" content="Jason Hill">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Change Log for the 29th Infantry Division's Arma 3 training mission template" />
+  <meta name="author" content="Jason Hill" />
   
 <style>
   body {
@@ -82,68 +81,44 @@
 <hr />
 
 <ul>
-<li>Added an HTML version of the change log called <code>change_log.html</code></li>
-
-<li>Added attendance counting to the <code>Log</code> entry accessed via the map screen</li>
-
-<li>Added simulation manager function module as this is handled natively and adjusted via Attributes -> Performance in the editor</li>
-
-<li>Added TFAR radios to each faction's "parade" loadout</li>
-
-<li>Added new function <code>Hill_fnc_setInsignia</code>
-
-
-<ul>
-<li>uses <code>squadParams</code> to automatically assign proper squad insignia on mission start and at the arsenal.</li></ul>
-</li>
-
-<li>Added call for <code>Hill_fnc_setIngignia</code> in <code>arsenalClosed</code> and <code>arsenalOpened</code> event handlers in <code>initPlayerLocal.sqf</code>
-
-
-<ul>
-<li>squad insignia now properly applied to the player when opening and closing the arsenal</li></ul>
-</li>
-
-<li>Added squad and platoon names and callsigns to lobby</li>
-
-<li>Added automatic furniture spawn
-
-
-<ul>
-<li><strong>NEEDS TESTING</strong></li>
-
-<li>On by default but can be turned off in the parameters menu via the lobby <em>before the mission is started</em></li>
-
-<li>picks a random player to spawn furniture in houses in a 50 metre radius.</li>
-
-<li>deletes furniture if selected player is > 25 metres from last checked position and no players are within 7 metres of the house.</li></ul>
-</li>
-
-<li>Adjusted BLUFOR "Parade" loadout in cfgInventories to match recent loadout changes.</li>
-
-<li>Adjusted <code>init_curators.sqf</code>
-
-
-<ul>
-<li><code>curatorObjectPlaced</code> event handler which calls <code>ace_fastroping_fnc_equipFRIES</code> function on placed helis is now applied to curators <strong>only</strong> if ACE is running</li></ul>
-</li>
-
-<li>Changed the <code>No Thermal Optics</code> parameter to be on by default.</li>
-
-<li>Changed base ammo box arsenal call
-
-
-<ul>
-<li>removes options to change voice, insignia, and face.</li>
-
-<li>significantly reduces the distance the <code>Arsenal</code> action is available.</li></ul>
-</li>
-
-<li>Changed respawn time to 15 seconds</li>
-
-<li>Changed the name on the change log file from <code>change_log.txt</code> to <code>change_log.md</code> and reformatted for markdown (fuck, that took a long time!)</li>
-
-<li>Changed curator vision mode in <code>init_curators.sqf</code> from "Shade of Red and Green, Bodies are white" to "White Hot Black Cold"</li>
+ <li>Added an HTML version of the change log called <code>change_log.html</code></li>
+ <li>Added attendance counting to the <code>Log</code> entry accessed via the map screen</li>
+ <li>Added simulation manager function module as this is handled natively and adjusted via Attributes -> Performance in the editor</li>
+ <li>Added TFAR radios to each faction's "parade" loadout</li>
+ <li>Added new function <code>Hill_fnc_setInsignia</code>
+  <ul>
+   <li>uses <code>squadParams</code> to automatically assign proper squad insignia on mission start and at the arsenal.</li>
+  </ul>
+ </li>
+ <li>Added call for <code>Hill_fnc_setIngignia</code> in <code>arsenalClosed</code> and <code>arsenalOpened</code> event handlers in <code>initPlayerLocal.sqf</code>
+  <ul>
+   <li>squad insignia now properly applied to the player when opening and closing the arsenal</li>
+  </ul>
+ </li>
+ <li>Added squad and platoon names and callsigns to lobby</li>
+ <li>Added automatic furniture spawn
+  <ul>
+   <li><strong>NEEDS TESTING</strong></li>
+   <li>On by default but can be turned off in the parameters menu via the lobby <em>before the mission is started</em></li>
+   <li>picks a random player to spawn furniture in houses in a 50 metre radius.</li>
+   <li>deletes furniture if selected player is > 25 metres from last checked position and no players are within 7 metres of the house.</li>
+  </ul>
+ </li>
+ <li>Adjusted BLUFOR "Parade" loadout in cfgInventories to match recent loadout changes.</li>
+ <li>Adjusted <code>init_curators.sqf</code>
+  <ul>
+   <li><code>curatorObjectPlaced</code> event handler which calls <code>ace_fastroping_fnc_equipFRIES</code> function on placed helis is now applied to curators <strong>only</strong> if ACE is running</li>
+  </ul>
+ </li>
+ <li>Changed the <code>No Thermal Optics</code> parameter to be on by default.</li>
+ <li>Changed base ammo box arsenal call
+  <ul>
+   <li>removes options to change voice, insignia, and face.</li>
+   <li>significantly reduces the distance the <code>Arsenal</code> action is available.</li></ul>
+ </li>
+ <li>Changed respawn time to 15 seconds</li>
+ <li>Changed the name on the change log file from <code>change_log.txt</code> to <code>change_log.md</code> and reformatted for markdown (fuck, that took a long time!)</li>
+ <li>Changed curator vision mode in <code>init_curators.sqf</code> from "Shade of Red and Green, Bodies are white" to "White Hot Black Cold"</li>
 </ul>
 
 <hr />
@@ -154,14 +129,12 @@
 <hr />
 
 <ul>
-<li>No version name change</li>
-
-<li>Added TFAR force usage (settings) Module.
-
-
-<ul>
-<li>Sets TFAR channel to "Training Radio Network" with a password of "123".</li></ul>
-</li>
+ <li>No version name change</li>
+ <li>Added TFAR force usage (settings) Module.
+  <ul>
+   <li>Sets TFAR channel to "Training Radio Network" with a password of "123".</li>
+  </ul>
+ </li>
 </ul>
 
 <hr />
@@ -172,16 +145,13 @@
 <hr />
 
 <ul>
-<li>No version name change</li>
-
-<li>Removed action option from Admin to turn Auto Spectate on or off
-
-
-<ul>
-<li>Option still available via mission parameters prior to mission start</li>
-
-<li>Default is disabled</li></ul>
-</li>
+ <li>No version name change</li>
+ <li>Removed action option from Admin to turn Auto Spectate on or off
+  <ul>
+   <li>Option still available via mission parameters prior to mission start</li>
+   <li>Default is disabled</li>
+  </ul>
+ </li>
 </ul>
 
 <hr />
@@ -192,18 +162,14 @@
 <hr />
 
 <ul>
-<li>Added script command <code>enableChanel [true(chat),false(VoN)];</code> to `initPlayerLocal.sqf to diable VoN in all of the available channels</li>
-
-<li>Added parameter <code>disableChannels[]</code> to <code>description.ext</code> to force disable VoN in all channels</li>
-
-<li>Removed voiceControl script to limit talking over specific channels.</li>
-
-<li>Added "Spectator" option from <code>respawnTemplates[] = {};</code> in description.ext because it now works
-
-
-<ul>
-<li>it is a limited version of the spectate and does not function the same as the custom one available at the spectator terminals.</li></ul>
-</li>
+ <li>Added script command <code>enableChanel [true(chat),false(VoN)];</code> to `initPlayerLocal.sqf to diable VoN in all of the available channels</li>
+ <li>Added parameter <code>disableChannels[]</code> to <code>description.ext</code> to force disable VoN in all channels</li>
+ <li>Removed voiceControl script to limit talking over specific channels.</li>
+ <li>Added "Spectator" option from <code>respawnTemplates[] = {};</code> in description.ext because it now works
+  <ul>
+   <li>it is a limited version of the spectate and does not function the same as the custom one available at the spectator terminals.</li>
+  </ul>
+ </li>
 
 <li>Added function <code>Hill_fnc_applInsig</code> which automatically applies the appropriate squad insignia to the player based on the group they joined (BLUFOR only)</li>
 
