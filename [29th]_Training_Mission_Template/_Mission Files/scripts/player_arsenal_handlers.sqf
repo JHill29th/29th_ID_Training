@@ -1,6 +1,6 @@
 if (!hasInterface) exitWith {};
 
-if (isNull (_this select 0)) exitWith {};
+waitUntil {!isNull player};
 
 arsenalClosed = {
   player spawn Hill_fnc_setInsignia;
