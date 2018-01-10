@@ -21,7 +21,7 @@ execVM "scripts\excludeObjFromZeus.sqf";
 ["attendance_join", "onPlayerConnected", {
 	private ["_text"];
 	_infoArray = squadParams player;    
-	_infoName = _infoArray select 1;
+	_infoName = _infoArray select 1; //error here?? 12:40:09 Error in expression <rams player;    _infoName = _infoArray select 1;_IM = _infoName select 4;if (>12:40:09   Error position: <select 1;_IM = _infoName select 4;if (>12:40:09   Error Zero divisor12:40:09 File mpmissions\__cur_mp.Malden\initServer.sqf, line 24
 	_IM = _infoName select 4;
 	if (_IM == "") then {
 		_text = format ["Connected:  -  %1  -  %2" + "<br />", _name, _uid];

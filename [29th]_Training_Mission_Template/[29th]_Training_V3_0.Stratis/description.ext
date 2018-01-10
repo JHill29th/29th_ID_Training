@@ -30,7 +30,8 @@ class CfgFunctions
 			class spectator {};
 //			class playerAdmin {};
 			class cleaner {};
-			class applyInsig {};
+//			class applyInsig {};
+			class setInsignia {};
 		};
 	};
 };

@@ -16,13 +16,15 @@ enableEnvironment false;
 
 if (side (group _theClient) == WEST) then {
 	[_theClient, configfile >> "CfgRespawnInventory" >> "29TH_PARADE_WEST"] call BIS_fnc_loadInventory;
-	[_theClient] spawn Hill_fnc_applyInsig;
+	[_theClient] spawn Hill_fnc_setInsignia;
 };
 if (side (group _theClient) == EAST) then {
 	[_theClient, configfile >> "CfgRespawnInventory" >> "29TH_PARADE_EAST"] call BIS_fnc_loadInventory;
+	[_theClient] spawn Hill_fnc_setInsignia;
 };
 if (side (group _theClient) == INDEPENDENT) then {
 	[_theClient, configfile >> "CfgRespawnInventory" >> "29TH_PARADE_INDEPENDENT"] call BIS_fnc_loadInventory;
+	[_theClient] spawn Hill_fnc_setInsignia;
 };
 
 sleep 1;
@@ -31,13 +33,9 @@ sleep 1;
 // Handle inventory for respawn
 
 [ missionNamespace, "arsenalClosed", {
+	player call Hill_fnc_setInsignia; //apply insignia
 	[ player, [ missionNamespace, "Current Inventory" ] ] call BIS_fnc_saveInventory;
 	[player, ["missionNamespace:Current Inventory"]] call BIS_fnc_setRespawnInventory;
-	_Insignia = [player] call BIS_fnc_getUnitInsignia; 
-	if (_Insignia != "") then {
-		player setVariable ["Insignia", _Insignia];
-		[ player, player getVariable "Insignia" ] remoteExec [ "BIS_fnc_setUnitInsignia",0,true]; // apply player's insignia globally
-	};
 	if (!(weaponLowered player)) then {
 		player action ["WeaponOnBack", player];
 	};
@@ -46,11 +44,7 @@ sleep 1;
 }] call BIS_fnc_addScriptedEventHandler;
 
 [ missionNamespace, "arsenalOpened", {
-	_Insignia = [player] call BIS_fnc_getUnitInsignia;
-	if (_Insignia != "") then {
-		player setVariable ["Insignia", _Insignia];
-		[ player, player getVariable "Insignia" ] remoteExec [ "BIS_fnc_setUnitInsignia",0,true]; // apply player's insignia globally
-	};
+	player call Hill_fnc_setInsignia; //apply insignia
 //	systemChat "Your insignia has been applied.";
 }] call BIS_fnc_addScriptedEventHandler;
 
