@@ -1,0 +1,35 @@
+dev = "Rellikplug";
+//Author = "29th Engineers";
+//loadScreen =  "29colageee.jpg";
+OnLoadName = "29th ID BCT v7.7";
+//onLoadMission = "<t align='center' size='1.5' color='#0000FF'>Basic Combat Training</t><br/><t align='center' size='1.25' color='#BFBFBF'>29th Infantry Division</t>";
+OnLoadMissionTime = 1;
+//OnLoadPicture = "29colageee.jpg";
+//OverviewText = "<t align='center' size='1.5' color='#0000FF'>Basic Combat Training</t><br/><t align='center' size='1.25' color='#BFBFBF'>29th Infantry Division</t>";
+//OverviewPicture = "29colageee.jpg";
+
+respawnOnStart = 0;
+
+class CfgFunctions {
+	#include "functions\curator\CfgFunctions.hpp"  // Curator sync https://forums.bistudio.com/topic/166808-making-placed-units-be-editable-for-every-zeus/#entry2607581
+	#include "scripts\MossRifleTargets\cfgfunctions.hpp"
+//	#include "functions\CfgFunctions.hpp"
+
+	class JJH
+	{
+		tag = "RP";
+		class 29th
+		{
+			file = "functions";
+//			class animateSmooth {};
+//			class bdr_rails {};
+//			class movingTarget {};
+			class teleport {};
+			class SR_reset {};
+			class DKH {};
+			class DKH_targets_hit {};
+			class setInsignia {};
+		};
+	};
+};
+//EOF
