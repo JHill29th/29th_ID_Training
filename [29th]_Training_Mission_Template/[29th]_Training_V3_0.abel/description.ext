@@ -1,0 +1,56 @@
+dev = "Rellikplug";
+
+OnLoadName = "29th Training V3.0";
+// =========================== Loading Screen
+Author = "CW3 Hill";
+loadScreen =  "Pictures\116Inf InsigniaAlpha.paa";
+//OnLoadMission = "NATO | CSAT | AAF Training Tandbox";
+OnLoadMission = "<t align='center'><t size='1.5' color='#2A1ADC'>BLUFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>OPFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>GRNFOR</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
+OnLoadMissionTime = 1;
+OverviewText = "<t align='center'><t size='1.5' color='#2A1ADC'>BLUFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>OPFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>GRNFOR</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
+//OverviewPicture = "Pictures\116Inf InsigniaAlpha.paa";
+
+respawnOnStart = 0;
+
+//disableChannels[] = {{0,false,true},{1,false,true},{2,false,true},{3,true,true},{4,true,true},{5,true,true},{6,false,true}};
+
+//respawnTemplates[] = {"Spectator"};
+
+class CfgFunctions 
+{
+	#include "functions\curator\CfgFunctions.hpp"  // Curator sync https://forums.bistudio.com/topic/166808-making-placed-units-be-editable-for-every-zeus/#entry2607581
+	
+	class 29th_Training
+	{
+		tag = "Hill";
+		class 29th
+		{
+			file = "functions";
+			class removeAllRespawnInventory {};
+			class spectator {};
+//			class playerAdmin {};
+			class cleaner {};
+			class applyInsig {};
+		};
+	};
+};
+
+class CfgNotifications 
+{
+	#include "data\cfgNotifications.hpp"
+};
+
+class Params
+{
+	#include "data\params.hpp"
+};
+
+class CfgRespawnInventory
+{
+	#include "data\cfgInventories.hpp"
+};
+
+class CfgRoles
+{
+	#include "data\cfgRoles.hpp"
+};

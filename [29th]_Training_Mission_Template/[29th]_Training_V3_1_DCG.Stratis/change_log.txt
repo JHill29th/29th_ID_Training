@@ -1,0 +1,357 @@
+-------------------------------------------------
+					v3.0
+					2016OCT15
+-------------------------------------------------
+	Added script command `enableChanel [true(chat),false(VoN)];` to `initPlayerLocal.sqf to diable VoN in all of the available channels
+	
+	Added parameter `disableChannels[]` to `description.ext` to force disable VoN in all channels
+	
+	Removed voiceControl script to limit talking over specific channels.
+	
+	Added "Spectator" option from `respawnTemplates[] = {};` in description.ext because it now works
+	
+		- it is a limited version of the spectate and does not function the same as the custom one available at the spectator terminals.
+	
+	Added function `Hill_fnc_applInsig` which automatically applies the appropriate squad insignia to the player based on the group they joined (BLUFOR only)
+	
+	Added forcing players to lower weapons on first join and after exiting the virtual arsenal
+	
+	Removed TFAR frequency modules to set default SR radio freq. as per Comms. card because it wasn't reliable.
+	
+-------------------------------------------------
+					v3.0
+					2016SEP6
+-------------------------------------------------
+	Added back automatic spectate option.
+
+		- Disabled by default.
+		- Added graphics to ON and OFF actions
+		- Added systemChat message to confirm action
+	
+	Removed player stats system for a very, very slight performance gain. (I don't think anyone used this anyhow)
+	
+	Removed "Spectator" option from respawnTemplates[] = {}; in description.ext because it doesn't work (arrg BI)
+	
+		- This is to access the BIS Spectaor (Activate the button) from the respawn menu.  Removed because it is a limited version of the spectate and does not function as we like.  
+		Players can still access the spectator from the terminal boxes or if the ADMIN turns on the auto-spectate.
+		
+	Added "Parade" loadout inventory
+	
+		- For all sides
+		- Uses BIS_fnc_setRespawnInventory in initPlayerLocal.sqf
+		- Set as default gear when first joining.
+		- Available on respawn menu
+		
+	Added functionality for saved loadout (after leaving arsenal) to be added to respawn inventory and available from the respawn menu.
+	
+	Added Headless Client functionality.
+	
+		- Not tested yet.
+	
+	Changed spectator script to registered function in functions library.
+	
+		- functions\fn_spectator.sqf
+		- Used via <object> spawn Hill_fnc_spectator
+		
+	Removed in-line function for admin checking from initPlayerLocal.sqf in favour of a registered function.
+	
+		- functions\fn_playerAdmin.sqf
+		- <object> call Hill_fnc_playerAdmin
+		
+	Adjusted addAction calls set to spectator terminals.
+	
+		- Added graphic to action menu
+		
+	Moved init call for opening arsenal from individual ammo boxes (6 total) in editor to init.sqf
+	
+		- Added graphic to action menu
+		
+	Removed call BIS_fnc_drawCuratorLocations from init_curators.sqf
+	
+		- non functioning (script error)
+		- RPT spam (a shit tonne; no, seriously I mean a lot of rpt spam%)
+		
+	Fixed Civilian Journalist slots having Camera action only after respawn.
+	
+	Added simulation manager
+	
+		- removes simulation and hides objects more that are > 5000 m from playable units
+		- does not include air units
+
+	Changed cleaner script to a registered function.
+	
+		- functions\fn_cleaner.sqf
+		- call Hill_fnc_cleaner
+
+-------------------------------------------------
+					v2.30
+					2016JUN28
+-------------------------------------------------
+	Removed automatic spectate start on player respawn.
+	
+	Added "Spectator" option to respawnTemplates[] in description.ext.
+	
+	Added mission parameter option to allow/disallow TI optics.  Default is on.
+	
+		- Adds scripts\noThermals.sqf
+		
+	Adjusted playable units
+	
+		- Fixed role description errors.
+		- Organized variable names.
+		- Added Grenadier to each squad.
+		- Removed setGroupID command from all units' init.  Set via edited attributes via 3D editor instead.
+		- Added callsign information to group names.
+		- Added playable slots for BN Leadership.
+		
+	Added TFAR frequency modules to set default SR radio freq. as per Comms. card.
+	
+-------------------------------------------------
+					v2.25
+					2016APR21
+-------------------------------------------------
+	Removed faction restriction from spectator.  Players can now spectate all sides.
+	
+	Added 'enableEnvironment false;' command to init.sqf to disable bees, butterflies, birds, rabbits, snakes and environmental sounds, crickets etc.
+
+-------------------------------------------------
+					v2.25
+					2016APR10
+-------------------------------------------------
+	Added automatic repetitive exclusion of base objects (ammo boxes, spectate table) from being added by zeus.
+	
+		- Checks every 5 seconds for all editable objects and removes the excluded if found to be editable.
+		- scripts\excludeObjFromZeus.sqf
+
+	Changed initial respawn positions from markers (respawn_<side>) to respawn modules
+
+	Increased squad size to 20 (including leadership).
+	
+	Increased size of GRNFOR and OPFOR sides to 33 slots each.
+	
+	Added third squad to each platoon.
+	
+	Added squad name to roll description in lobby (BLUFOR only).
+
+	Added player weapon stats tracking at spectate box.
+	
+		- shots fired
+		- targets hit (men only; AI and Human)
+		- Accuracy
+		- deaths
+		- scripts\checkStats.sqf
+		- scripts\stats.sqf
+	
+	Added attendance system (WIP - not finished).
+	
+		- scripts\attendance.sqf
+		- init.sqf
+	
+	Added ACE 3 Fast Roaping (FRIES) system to all zeus placed helos.
+	
+	Added automatic spectate start on player respawn.
+	
+		- Can be set off or on in the mission parameters in the lobby before starting the mission.
+		- Admin can turn auto spectate on and off during the mission via the action menu.
+	
+	Added init.sqf
+	 
+-------------------------------------------------
+					v2.25
+					2016JAN21
+-------------------------------------------------
+	Converted mission from 2D editor to 3D editor (Eden)
+	
+	Removed scripted (BIS) module supports to Co. and Plt. units.  Virtual Supply drop and Virtual Air transport.
+	
+	Removed variable for possible future compatibility with TAW view distance
+
+	 - View distance is adjustable by via ACE 3
+	 
+-------------------------------------------------
+					v2.20
+					2016JAN21
+-------------------------------------------------
+	Removed addAction from arsenal boxes for gear saving.
+	
+	Removed RP_loadout.sqf (gear saving)
+	
+	Removed generic (default) respawnTemplates[] as it is not needed when specific factions are specified.
+	
+	Removed teleport.sqf - not needed
+	
+	Removed init.sqf as all initialization has been appropriately distributed to localized event scripts.
+	
+	Added initPlayerLocal.sqf with scripting
+	
+		- to save gear upon closing the arsenal GUI.
+		- for curator functions (propagating placed objects between curators)
+
+	Added onPlayerRespawn.sqf with scripting to
+
+		- load gear after respawn
+		- Automatically start the spectator upon respawn
+		- re-add curator placed objects back to the respawned unit.
+
+	Added initPlayerServer.sqf with scripting
+	
+		- for curator functions (propagating placed objects between curators)
+		
+	Added initServer.sqf with scripting to
+	
+		- add thermal vision to all curators (Zeus). White hot and dark red cool.  Not sure if I like it :(
+	
+	Added functions to make all curator placed objects editable by all curators.
+	
+		- See cfgFunctions in description.ext and functions\curator\
+	
+	Added scripted (BIS) module supports to Co. and Plt. units.  Virtual Supply drop and Virtual Air transport.
+	
+		- Access through the radio key '0' (zero) then select supports and follow the menu.
+	 
+	Added voiceControl script to limit talking over specific channels.  Access to channels increase with importance...
+
+	Added variable for possible future compatibility with TAW view distance
+	
+	Changed respawnDelay in description.ext from 3 to 10
+	
+	Fixed 3d task and task management to new method. See CfgTaskEnhancements in description.ext
+	
+	Fixed error in RespawnTemplatesWest[]
+
+
+-------------------------------------------------
+					v2.15
+					2015DEC23
+-------------------------------------------------
+	Removed MCC Dependency
+
+-------------------------------------------------
+					v2.10
+					2015DEC23
+-------------------------------------------------
+	Adjusted Spectating script to force camera back to player on exit
+	
+	Changed respawnOnStart parameter in description.ext from 1 to 0
+		to prevent hang on loading screen when changing sides or joining after start
+		
+	Added separate respawnTemplates for each faction 
+
+-------------------------------------------------
+					v2.10
+					2015DEC08
+-------------------------------------------------
+	Removed legacy setSquadInsigniaNEW.sqf call from init.sqf
+	
+	Added spectating script.  scripts\spectator.sqf
+		Uses BIS_fnc_EGspectator
+	
+	Removed ACE Spectator settings module and "ace_spectator" template from respawnTemplates[]= in the
+		description.ext
+		
+	Changed respawnDelay in description.ext from 10 to 3
+
+
+-------------------------------------------------
+					v2.10
+					2015NOV28
+-------------------------------------------------
+	Version Change to v2.10
+	
+	Removed squad insignia system as it has be replaced with @29thID (Yay!)
+	
+	Removed 29th Actions (Salute, Attention, etc.) replaced with @29thID
+	
+	Removed setTerrainGrid 50; from initPlayerLocal.sqf
+	
+	Added ACE Spectator settings module and "ace_spectator" template to respawnTemplates[]= in the
+		description.ext
+		
+	Changed respawnDelay in description.ext from 4 to 10
+
+-------------------------------------------------
+					v2.00
+					2015AUG12
+-------------------------------------------------
+	No version name change
+	
+	Removed Arsenal preload.
+
+	Adjusted MCC Settings modules to turn off UI interface and cover/mounted actions.
+
+-------------------------------------------------
+					v2.00
+					2015JUN24
+-------------------------------------------------
+	Added squad insignia system
+		Uses profileNamespace to save a variable to your profile to be called when a squad insignia is needed.
+		Updated initPlayerLocal.sqf to call new setUnitInsignia.sqf
+		
+	Adjusted BIS_setUnitInsignia call from BIS_saveLoadInventory.sqf to call proper insignia based
+on what is set in profileNamespace from setUnitInsignia.sqf (because the Arsenal removes the custom insignia)
+<code>_patch = profileNamespace getVariable ["patch", ""];
+[[player, _patch], "BIS_fnc_setUnitInsignia", nil, true, true] call BIS_fnc_MP;</code>
+		
+	Added "EndMission","Spectator", and "Tickets" to description.ext respawnTemplates[] =
+	
+	Removed dependency on AGM including modules.  Dependency to TFAR and MCC remain.
+	
+	Removed RP_VArsenalDrop.sqf from 29thActions.
+	
+	Added preload arsenal function call to initServer.sqf
+	
+	Added "setTerrainGrid 50;" to initPlayerLocal.sqf to force grass level to "low".
+	
+	Added Time and Weather parameters to mission lobby.
+	
+	Added functionality for 2D task waypoints and 3D task markers in the description.ext
+	
+-------------------------------------------------
+					v1.03
+					
+-------------------------------------------------
+		-edits by 2lt. Turczyn
+	Added "MenuInventory" to description.ext respawnTemplates[] =
+	
+	Tweaks to TFAR module
+
+-------------------------------------------------
+					v1.02
+					2014NOV09
+-------------------------------------------------
+	Added two mission observer slots which can use the BIS Splendid Camera.
+	
+	Removed BIS modules for setting custom group designation.
+	
+	Removed MCC set-up from the mission init.sqf.
+	
+	Removed removeAllActions script as it was incorporated into 29thActions.sqf.
+		Also removed script call from init.sqf.
+	
+	Added MCC modules for mission settings and access rights (all).
+	
+	Adjusted the 29thActions scripts to remove the gen_action.sqf format.
+		Changed the name of all 29thAction scripts to remove "gen_action_" from name.
+		
+	NOTE: RP_VArsenalDrop.sqf is still not removing the addAction from all players of the callers' side... WIP...
+
+-------------------------------------------------
+					v1.01
+					2014OCT21
+-------------------------------------------------
+	Adjusted the gen_action_RP_VArsenalDrop.sqf to remove the "supply drop" action from all players
+(per side of the caller) once the drop has been called and add the action back after the crate is recovered or destroyed.
+
+	Adjusted the BIS_SaveLoadInventory.sqf to add the custom 29th ID unitInsignia on gear respawn.
+	
+	Adjusted and cleaned up the 29th Actions scripts.
+	
+	Added a killed event handler to 29thActions.sqf to remove actions (salute, push-ups, surrender, leave captivity, and supply drop)
+from player's body upon death.
+
+	
+-------------------------------------------------
+					v1.00
+					2014OCT17
+-------------------------------------------------
+	Inception
