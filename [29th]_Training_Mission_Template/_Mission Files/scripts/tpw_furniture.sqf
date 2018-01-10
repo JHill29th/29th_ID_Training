@@ -32,7 +32,7 @@ tpw_furniture_scantime = _this select 1; // time (sec) in between house scans
 tpw_furniture_houses = []; // houses with furniture
 tpw_furniture_lastpos = [0,0,0]; // last position of player
 
-player_to_use = selectRandom allPlayers;
+player_to_use = selectRandom playableUnits;
 diag_log text format ["TPW Furniture:  Player selected:  %1",name player_to_use];
 
 // FURNISH HOUSE
@@ -873,7 +873,7 @@ while {true} do
 	{
 	if (isNull player_to_use || !alive Player_to_use) then
 		{
-		player_to_use = selectRandom allPlayers;
+		player_to_use = selectRandom playableUnits;
     diag_log text format ["TPW Furniture:  New player selected:  %1",name player_to_use];
 		};
 	// Scan for houses to furnish
