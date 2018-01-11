@@ -25,6 +25,9 @@ if (_autoSpectate == 1) then {
 	publicVariable "autoSpectate";
 };
 
+disabledTI = "disabledTI" call BIS_fnc_getParamValue;
+publicVariable "disabledTI";
+
 execVM "scripts\excludeObjFromZeus.sqf";
 
 attendance = [];

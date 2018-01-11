@@ -62,6 +62,19 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 	} forEach allCurators;
 };
 
+if (disabledTI == 0) then {
+	{
+		// Call ACE3 Fast Rope function on each helicopter placed
+		disableThermalImaging = _x addEventHandler ["CuratorObjectPlaced", {
+			private ["_objectPlaced"];
+			_objectPlaced = _this select 1;
+			if (_objectPlaced isKindOf "Air" || _objectPlaced isKindOf "Car" || _objectPlaced isKindOf "Ship" || _objectPlaced isKindOf "Tank" || _objectPlaced isKindOf "StaticWeapon") then {
+				_objectPlaced disableTIEquipment true;
+			};
+		}];
+	} forEach allCurators;
+};
+
 /*
 //	Used with Stats system
 {

@@ -50,9 +50,11 @@ _null = [] execVM "scripts\voice_control\voiceControl.sqf";
 //[_theClient] call Hill_fnc_playerAdmin;
 
 //restrict thermals
-_disabledTI = "disabledTI" call BIS_fnc_getParamValue;
-if (_disabledTI == 0) then {
-	[_theClient] execVM "scripts\noThermals.sqf";
+if (disabledTI == 0) then {
+	//[_theClient] execVM "scripts\noThermals.sqf";
+  ["visionMode", {
+    [_this] spawn Hill_fnc_noThermals;
+  }] call CBA_fnc_addPlayerEventHandler;
 };
 
 	[_theClient] spawn {

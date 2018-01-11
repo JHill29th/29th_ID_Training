@@ -1,5 +1,24 @@
 ---
 v3.6  
+11 JAN 2018
+
+* No version name change
+* Removed the furniture spawn script
+* Removed `change_log.html`
+* Adjusted `Hill_fnc_setInsignia` to make sure the drab and vibrant insignias were applied at the proper time
+  - no primary weapon or has M4A1 PIP with no attachments = vibrant else drab
+* Removed two unused scripts
+* Adjusted `arsenalClosed` event handler in `scripts\player_arsenal_handlers.sqf`
+  - When ace arsenal is closed if player has no radio add faction specific radio
+* Completely reworked thermal imaging restriction
+  - Added `["visionMode", {}] call CBA_fnc_addPlayerEventHandler` in `initPlayerLocal,sqf`
+  - Added new function `Hill_fnc_noThermals`
+  - Added public variable `disabledTI` to `initServer.sqf`
+  - Added a `curatorObjectPlaced` event handler to `init_curators.sqf`
+     - uses `disableTIEquipment` on all objects of type "Car", "Air", "Ship", "Tank", and "StaticWeapon"
+
+---
+v3.6  
 9 JAN 2018
 
 ---

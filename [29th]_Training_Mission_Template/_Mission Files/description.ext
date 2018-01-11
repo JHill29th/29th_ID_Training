@@ -34,6 +34,7 @@ class CfgFunctions
 			class attendance {};
       class transferVAtoAA {};
       class handleInitialInventory {};
+      class noThermals {};
 		};
 	};
 };
