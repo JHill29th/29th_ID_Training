@@ -13,6 +13,23 @@ arsenalClosed = {
 	hintSilent "Your gear has been saved.";
 };
 
+addRadio = {
+  if ( (((getUnitLoadout player) select 9) select 2) == "") then {
+    switch (side (group player)) do {
+      case (WEST): {
+        player linkItem "tf_anprc152";
+      };
+      case (EAST): {
+        player linkItem "tf_fadak";
+      };
+      case (INDEPENDENT): {
+        player linkItem "tf_anprc148jem";
+      };
+      default {};
+    };
+  };
+};
+
 [missionNamespace, "arsenalClosed", {
 	call arsenalClosed;
 }] call BIS_fnc_addScriptedEventHandler;
@@ -23,5 +40,6 @@ arsenalClosed = {
 }] call BIS_fnc_addScriptedEventHandler;
 
 ["ace_arsenal_displayClosed", {
+  call addRadio;
   call arsenalClosed;
 }] call CBA_fnc_addEventHandler;
