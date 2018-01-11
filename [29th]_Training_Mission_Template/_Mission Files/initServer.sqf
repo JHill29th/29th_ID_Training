@@ -29,8 +29,3 @@ execVM "scripts\excludeObjFromZeus.sqf";
 
 attendance = [];
 publicVariable "attendance";
-
-_tpwFurniture = "tpwFurniture" call BIS_fnc_getParamValue;
-if (_tpwFurniture == 1) then {
-	0 = [50,5] execvm "scripts\tpw_furniture.sqf";
-};

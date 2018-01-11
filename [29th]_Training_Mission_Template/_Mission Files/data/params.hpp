@@ -12,11 +12,3 @@
 		texts[] = {"No (Default)","Yes"};
 		default = 0;
   };
-	
-	class tpwFurniture 
-  {
-		title = "Enable furniture spawning?";
-		values[] = {0,1};
-		texts[] = {"No","Yes (Default)"};
-		default = 1;
-  };
