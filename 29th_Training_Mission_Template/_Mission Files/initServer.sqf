@@ -29,6 +29,3 @@ disabledTI = "disabledTI" call BIS_fnc_getParamValue;
 publicVariable "disabledTI";
 
 execVM "scripts\excludeObjFromZeus.sqf";
-
-attendance = [];
-publicVariable "attendance";

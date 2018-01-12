@@ -31,7 +31,6 @@ class CfgFunctions
 		//	class playerAdmin {};
 			class cleaner {};
 			class setInsignia {};
-			class attendance {};
       class transferVAtoAA {};
       class handleInitialInventory {};
       class noThermals {};

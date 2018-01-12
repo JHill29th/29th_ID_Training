@@ -19,8 +19,6 @@ enableEnvironment false;
 
 sleep 1;
 
-[_theClient] call Hill_fnc_attendance;
-
 // ==============================================================================
 
 [_theClient] execVM "scripts\player_arsenal_handlers.sqf";
