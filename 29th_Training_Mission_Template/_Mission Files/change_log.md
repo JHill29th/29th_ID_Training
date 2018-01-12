@@ -2,6 +2,8 @@
 v3.6  
 11 JAN 2018
 
+---
+
 * No version name change
 * Removed the furniture spawn script
 * Removed `change_log.html`

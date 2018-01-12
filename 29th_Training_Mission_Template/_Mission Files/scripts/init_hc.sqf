@@ -1,17 +1,7 @@
-/*
- * aitohc.sqf
- *
- * By VCRPlayer
- *
- * This script will move ANY ai (ie: zeus-spawned, etc)         to the headless client for processing on every frame
- * 
- * In init.sqf, put "[] execVM "aitohc.sqf";" (without outer quotes)
- *
- * In the description of the HeadlessClient virtual unit, put HC
- */
+
+waitUntil {!isNil "Headless Client"};
 if (!isServer) exitWith {};
 _HC = owner "Headless Client"; //<string> denotes the name of the HC entity/unit in-game
-waitUntil {!isNil "Headless Client"};
 
 /* ["HCS_addToHC", "onEachFrame", {
     if ((isPlayer)||(_x in units group _HC)) exitWith {};

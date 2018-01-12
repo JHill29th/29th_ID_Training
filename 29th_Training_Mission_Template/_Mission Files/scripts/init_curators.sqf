@@ -4,38 +4,6 @@
 //	[_x,[WEST,EAST,INDEPENDENT,CIVILIAN]] call BIS_fnc_drawCuratorRespawnMarkers;
 } forEach allCurators;
 
-if (hc_online) then {
-	{
-// 		Move curator placed units to the headless client
-		AIswitchToHC = _x addEventHandler ["CuratorGroupPlaced", {
-			private ["_grp_entity", "_numUnits"];
-			_grp_entity = _this select 1;
-			_numUnits = count (units _grp_entity);
-			missionNamespace setVariable ["BIS_fps_rescanNewObjects", true];
-			if (groupOwner _grp_entity != owner "Headless Client") then {
-				_grp_entity setGroupOwner (owner "Headless Client");
-				systemChat format ["%1 units moved to HC.", _numUnits];
-			};
-		}];
-	} forEach allCurators;
-};
-	
-if (!hc_online) then {
-	{
-//		Move curator placed units to the server
-		AIswitchToServer = _x addEventHandler ["CuratorGroupPlaced", {
-			private ["_grp_entity", "_numUnits"];
-			_grp_entity = _this select 1;
-			_numUnits = count (units _grp_entity);
-			missionNamespace setVariable ["BIS_fps_rescanNewObjects", true];
-			if (groupOwner _grp_entity != 2) then {
-				_grp_entity setGroupOwner 2;
-				systemChat format ["%1 units moved to server.", _numUnits];
-			};
-		}];
-	} forEach allCurators;
-};
-
 {
 // Checks if the deleted object in a respawnInventory module and then deletes all respawn inventories
 // configfile >> "CfgFunctions" >> "A3_Modules_F_Curator" >> "Respawn" >> "moduleRespawnInventory"
@@ -62,17 +30,59 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 	} forEach allCurators;
 };
 
-if (disabledTI == 0) then {
-	{
-		// Call ACE3 Fast Rope function on each helicopter placed
-		disableThermalImaging = _x addEventHandler ["CuratorObjectPlaced", {
-			private ["_objectPlaced"];
-			_objectPlaced = _this select 1;
-			if (_objectPlaced isKindOf "Air" || _objectPlaced isKindOf "Car" || _objectPlaced isKindOf "Ship" || _objectPlaced isKindOf "Tank" || _objectPlaced isKindOf "StaticWeapon") then {
-				_objectPlaced disableTIEquipment true;
-			};
-		}];
-	} forEach allCurators;
+if (isNil "hc_online") then {
+  waitUntil {!isNil "hc_online"};
+
+  if (hc_online) then {
+    {
+// 		Move curator placed units to the headless client
+      AIswitchToHC = _x addEventHandler ["CuratorGroupPlaced", {
+        private ["_grp_entity", "_numUnits"];
+        _grp_entity = _this select 1;
+        _numUnits = count (units _grp_entity);
+        missionNamespace setVariable ["BIS_fps_rescanNewObjects", true];
+        if (groupOwner _grp_entity != owner "Headless Client") then {
+          _grp_entity setGroupOwner (owner "Headless Client");
+          systemChat format ["%1 units moved to HC.", _numUnits];
+        };
+      }];
+    } forEach allCurators;
+  };
+	
+  if (!hc_online) then {
+    {
+//		  Move curator placed units to the server
+      AIswitchToServer = _x addEventHandler ["CuratorGroupPlaced", {
+        private ["_grp_entity", "_numUnits"];
+        _grp_entity = _this select 1;
+        _numUnits = count (units _grp_entity);
+        missionNamespace setVariable ["BIS_fps_rescanNewObjects", true];
+        if (groupOwner _grp_entity != 2) then {
+          _grp_entity setGroupOwner 2;
+          systemChat format ["%1 units moved to server.", _numUnits];
+        };
+      }];
+    } forEach allCurators;
+  };
+
+};
+
+if (isNil "disabledTI") then {
+  waitUntil {!isNil "disabledTI"};
+  
+  if (disabledTI == 0) then {
+    {
+		//  Call ACE3 Fast Rope function on each helicopter placed
+      disableThermalImaging = _x addEventHandler ["CuratorObjectPlaced", {
+        private ["_objectPlaced"];
+        _objectPlaced = _this select 1;
+        if (_objectPlaced isKindOf "Air" || _objectPlaced isKindOf "Car" || _objectPlaced isKindOf "Ship" || _objectPlaced isKindOf "Tank" || _objectPlaced isKindOf "StaticWeapon") then {
+          _objectPlaced disableTIEquipment true;
+        };
+      }];
+    } forEach allCurators;
+  };
+
 };
 
 /*
