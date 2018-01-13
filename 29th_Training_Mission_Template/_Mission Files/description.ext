@@ -19,23 +19,7 @@ respawnOnStart = 0;
 class CfgFunctions 
 {
 	#include "functions\curator\CfgFunctions.hpp"  // Curator sync https://forums.bistudio.com/topic/166808-making-placed-units-be-editable-for-every-zeus/#entry2607581
-	
-	class 29th_Training
-	{
-		tag = "Hill";
-		class 29th
-		{
-			file = "functions";
-			class removeAllRespawnInventory {};
-			class spectator {};
-		//	class playerAdmin {};
-			class cleaner {};
-			class setInsignia {};
-      class transferVAtoAA {};
-      class handleInitialInventory {};
-      class noThermals {};
-		};
-	};
+	#include "functions\29th_Training\CfgFunctions.hpp"
 };
 
 class CfgNotifications 

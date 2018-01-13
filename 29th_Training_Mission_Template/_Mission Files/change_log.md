@@ -5,6 +5,23 @@ v3.6
 ---
 
 * No version name change
+* Removed initial attemps at attendance system
+* Added check for team kills which will display a message in sideChat
+  - Adds function `Hill_fnc_teamKill` called by an MPKilled event handler applied from `initPlayerLocal.sqf`
+* Added player rating adjustment to prevent players from not being able to get into vics occupied by a team killer
+  - Adds function `Hill_fnc_adjustRating` called from the `initPlayerLocal.sqf` if a player's rating < or = -1000
+  - Returns player's rating to default starting value of 350
+* Refactor some scripts.
+* Moved custom functions config from `description.ext` to `functions\29th_Training\29th_Training.hpp`
+  - Configuration by `#include "functions\29th_Training\CfgFunctions.hpp"` in the `description.ext`
+
+---
+v3.6  
+11 JAN 2018
+
+---
+
+* No version name change
 * Removed the furniture spawn script
 * Removed `change_log.html`
 * Adjusted `Hill_fnc_setInsignia` to make sure the drab and vibrant insignias were applied at the proper time

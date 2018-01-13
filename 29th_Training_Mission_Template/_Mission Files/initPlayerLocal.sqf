@@ -23,6 +23,21 @@ sleep 1;
 
 [_theClient] execVM "scripts\player_arsenal_handlers.sqf";
 
+_theClient addMPEventHandler ["MPKilled", {
+  _this call Hill_fnc_teamKill;
+}];
+
+
+[_theClient] spawn {
+ private _theClient = _this select 0;
+  while {true} do {
+    if (rating _theClient <= -1000) then {
+     _theClient call Hill_fnc_adjustRating;
+    };
+  sleep 0.3;
+  };
+};
+
 //If the respawn menu button is active
 if (!isNumber (missionConfigFile >> "respawnButton") || {getNumber (missionConfigFile >> "respawnButton") > 0}) then {
   _respawnMenu = [] spawn {
@@ -55,12 +70,12 @@ if (disabledTI == 0) then {
   }] call CBA_fnc_addPlayerEventHandler;
 };
 
-	[_theClient] spawn {
-		private ["_theMan"];
-		_theMan = _this select 0;
-		waitUntil {currentWeapon _theMan != ""};
-		sleep 3;
-		if (!(weaponLowered _theMan)) then {
-			_theMan action ["WeaponOnBack", _theMan];
-		};
-	};
+[_theClient] spawn {
+  private ["_theMan"];
+  _theMan = _this select 0;
+  waitUntil {currentWeapon _theMan != ""};
+  sleep 3;
+  if (!(weaponLowered _theMan)) then {
+    _theMan action ["WeaponOnBack", _theMan];
+   };
+ };
