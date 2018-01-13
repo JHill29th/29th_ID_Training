@@ -1,0 +1,24 @@
+//Training Areas
+this addAction ["<t color='#FFFF00'>Teleport to Barracks</t>",RP_fnc_teleport,["barracks"]];
+this addAction ["<t color='#FFFF00'>Teleport to CQB Range</t>",RP_fnc_teleport,["shoothouse"]];  
+this addAction ["<t color='#FFFF00'>Teleport to Grenade Range</t>",RP_fnc_teleport,["grenade"]];  
+this addAction ["<t color='#FFFF00'>Teleport to Obstacle Course</t>",RP_fnc_teleport,["obstacle"]];  
+this addAction ["<t color='#FFFF00'>Teleport to SR Firing Range</t>",RP_fnc_teleport,["srrange"]];  
+this addAction ["<t color='#FFFF00'>Teleport to Kamino Firing Range</t>",RP_fnc_teleport,["kamino"]];  
+this addAction ["<t color='#FFFF00'>Teleport to Qualifications Range</t>",RP_fnc_teleport,["qual"]];  
+this addAction ["<t color='#FFFF00'>Teleport to Marina</t>",RP_fnc_teleport,["marina"]]; 
+this addAction ["<t color='#FFFF00'>Teleport to Motor Pool</t>",RP_fnc_teleport,["vehSpawn"]];  
+this addAction ["<t color='#FFFF00'>Teleport to Bearing Training</t>",RP_fnc_teleport,["compass"]];  
+this addAction ["<t color='#FFFF00'>Teleport to Aircraft Display</t>",RP_fnc_teleport,["aircraft"]]; 
+this addAction ["<t color='#FFFF00'>Teleport to Diving Range</t>",RP_fnc_teleport,["diving"]];
+
+//Locations
+this addAction ["<t color='#FFFF00'>Teleport to Barracks</t>",RP_fnc_teleport,["barracks"]];
+this addAction ["<t color='#FFFF00'>Camp Maxwell</t>",RP_fnc_teleport,["maxwell"]]; 
+this addAction ["<t color='#FFFF00'>Camp Rogain</t>",RP_fnc_teleport,["rogain"]]; 
+this addAction ["<t color='#FFFF00'>The Kill Farm</t>",RP_fnc_teleport,["killfarm"]]; 
+this addAction ["<t color='#FFFF00'>The Spartan</t>",RP_fnc_teleport,["spartan"]]; 
+this addAction ["<t color='#FFFF00'>Military Range</t>",RP_fnc_teleport,["militaryrange"]]; 
+this addAction ["<t color='#FFFF00'>Air Station Mike 26</t>",RP_fnc_teleport,["asm26"]]; 
+this addAction ["<t color='#FFFF00'>LZ Connor</t>",RP_fnc_teleport,["connor"]]; 
+this addAction ["<t color='#FFFF00'>Camp Tempest</t>",RP_fnc_teleport,["tempest"]];
