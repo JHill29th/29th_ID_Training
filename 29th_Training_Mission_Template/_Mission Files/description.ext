@@ -1,6 +1,7 @@
 dev = "Rellikplug";
 
 OnLoadName = "29th Training V3.6";
+briefingName = "29th Training V3.6";
 // =========================== Loading Screen
 Author = "CW3 Hill";
 loadScreen =  "Pictures\116Inf InsigniaAlpha.paa";
