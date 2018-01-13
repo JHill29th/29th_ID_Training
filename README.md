@@ -1,5 +1,5 @@
 # 29th Infantry Division
-## Training Missions & Scripts for Arma 3 - 29th ID Servers
+Training Missions & Scripts for Arma 3 - 29th ID Servers
 ### [29th Infantry Division Website](http://www.29th.org)
 ### [29th Infantry Division Forums](http://forums.29th.org)
 
