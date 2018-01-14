@@ -54,11 +54,11 @@ if (_insigTrue && !(count _sqdParams == 0)) then {
 		case ("CP2S1"): {
 			[_theClient, "CP2S1"] call BIS_fnc_setUnitInsignia;
 		};
-		case ("CP1S1"): {
+		case ("CP2S2"): {
 			[_theClient, "CP2S2"] call BIS_fnc_setUnitInsignia;
 		};
 		case ("CP2S3"): {
-			[_theClient, "CP2S2"] call BIS_fnc_setUnitInsignia;
+			[_theClient, "CP2S3"] call BIS_fnc_setUnitInsignia;
 		};
 		default {};
 	};
