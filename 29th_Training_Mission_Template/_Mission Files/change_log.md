@@ -1,11 +1,23 @@
 ---
 v3.6  
+14 JAN 2018
+
+---
+
+* No version name change
+* Fixed typo in `Hill_fnc_setInsignia` which incorrectly applied insiginas to two squads in CP2
+* Removed check for team kills which will display a message in sideChat
+  - Removes function `Hill_fnc_teamKill` and an MPKilled event handler from `initPlayerLocal.sqf`
+
+
+---
+v3.6  
 12 JAN 2018
 
 ---
 
 * No version name change
-* Removed initial attemps at attendance system
+* Removed initial attempts at attendance system
 * Added check for team kills which will display a message in sideChat
   - Adds function `Hill_fnc_teamKill` called by an MPKilled event handler applied from `initPlayerLocal.sqf`
 * Added player rating adjustment to prevent players from not being able to get into vics occupied by a team killer
