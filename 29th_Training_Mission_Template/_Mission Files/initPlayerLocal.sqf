@@ -23,11 +23,6 @@ sleep 1;
 
 [_theClient] execVM "scripts\player_arsenal_handlers.sqf";
 
-_theClient addMPEventHandler ["MPKilled", {
-  _this call Hill_fnc_teamKill;
-}];
-
-
 [_theClient] spawn {
  private _theClient = _this select 0;
   while {true} do {
