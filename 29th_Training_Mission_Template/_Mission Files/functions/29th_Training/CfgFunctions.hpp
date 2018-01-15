@@ -10,7 +10,6 @@ class 29th_Training {
     class transferVAtoAA {};
     class handleInitialInventory {};
     class noThermals {};
-    class teamKill {};
     class adjustRating {};
   };
 };
