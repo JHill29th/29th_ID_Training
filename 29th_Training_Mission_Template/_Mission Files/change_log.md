@@ -8,7 +8,8 @@ v3.6
 * Fixed typo in `Hill_fnc_setInsignia` which incorrectly applied insiginas to two squads in CP2
 * Removed check for team kills which will display a message in sideChat
   - Removes function `Hill_fnc_teamKill` and an MPKilled event handler from `initPlayerLocal.sqf`
-
+* Added many parameters to the `description.ext`
+  - Adding the parameters to the `description.ext` makes the settings less likely to be set incorrectly or changed by accident in the editor.
 
 ---
 v3.6  
