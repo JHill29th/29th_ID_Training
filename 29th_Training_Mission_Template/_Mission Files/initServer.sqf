@@ -28,4 +28,7 @@ if (_autoSpectate == 1) then {
 disabledTI = "disabledTI" call BIS_fnc_getParamValue;
 publicVariable "disabledTI";
 
+artilleryComputer = "artilleryComputer" call BIS_fnc_getParamValue;
+publicVariable "artilleryComputer";
+
 execVM "scripts\excludeObjFromZeus.sqf";

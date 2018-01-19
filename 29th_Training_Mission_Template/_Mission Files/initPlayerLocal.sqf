@@ -14,8 +14,11 @@ _didJIP = _this select 1;
 enableSentences false;
 enableEnvironment false;
 
+if (artilleryComputer == 0) then {
+  enableEngineArtillery false; 
+};
+
 [_theClient] spawn Hill_fnc_handleInitialInventory;
-//[] spawn Hill_fnc_saveInventoryFromAA;
 
 sleep 1;
 
@@ -59,7 +62,6 @@ _null = [] execVM "scripts\voice_control\voiceControl.sqf";
 
 //restrict thermals
 if (disabledTI == 0) then {
-	//[_theClient] execVM "scripts\noThermals.sqf";
   ["visionMode", {
     [_this] spawn Hill_fnc_noThermals;
   }] call CBA_fnc_addPlayerEventHandler;

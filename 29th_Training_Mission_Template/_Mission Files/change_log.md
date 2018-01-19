@@ -1,5 +1,18 @@
 ---
 v3.6  
+19 JAN 2018
+
+---
+
+* No version name change
+* Removed a `diag_log` call from `initPlayerLocal.sqf`
+* Added option to enable or disable the artillery computer for _all_ artillery vehicles
+  - Available in the lobby via `Parameters -> Artillery Computer
+  - Default selection is `Off`
+* Removed some old commented code from various places.
+
+---
+v3.6  
 14 JAN 2018
 
 ---
@@ -12,7 +25,7 @@ v3.6
   - Adding the parameters to the `description.ext` makes the settings less likely to be set incorrectly or changed by accident in the editor.
 
 ---
-v3.6  
+v3.6
 12 JAN 2018
 
 ---
@@ -29,7 +42,7 @@ v3.6
   - Configuration by `#include "functions\29th_Training\CfgFunctions.hpp"` in the `description.ext`
 
 ---
-v3.6  
+v3.6
 11 JAN 2018
 
 ---
@@ -50,7 +63,7 @@ v3.6
      - uses `disableTIEquipment` on all objects of type "Car", "Air", "Ship", "Tank", and "StaticWeapon"
 
 ---
-v3.6  
+v3.6
 9 JAN 2018
 
 ---
@@ -69,7 +82,7 @@ v3.6
   - Hopefully this will fix players not having insignia set when joining
 
 ---
-v3.5  
+v3.5
 7 JAN 2018
 
 ---
@@ -99,7 +112,7 @@ v3.5
 * Changed curator vision mode in `init_curators.sqf` from "Shade of Red and Green, Bodies are white" to "White Hot Black Cold"
 
 ---
-v3.0  
+v3.0
 20 NOV 2016
 
 ---
@@ -108,7 +121,7 @@ v3.0
   - Sets TFAR channel to "Training Radio Network" with a password of "123".
 
 ---
-v3.0  
+v3.0
 16 OCT 2016
 
 ---
@@ -118,7 +131,7 @@ v3.0
   - Default is disabled
 
 ---
-v3.0  
+v3.0
 15 OCT 2016
 
 ---
@@ -130,9 +143,9 @@ v3.0
 * Added function `Hill_fnc_applInsig` which automatically applies the appropriate squad insignia to the player based on the group they joined (BLUFOR only)
 * Added forcing players to lower weapons on first join and after exiting the virtual arsenal
 * Removed TFAR frequency modules to set default SR radio freq. as per Comms. card because it wasn't reliable.
-	
+
 ---
-v3.0  
+v3.0
 6 SEP 2016
 
 ---
@@ -175,7 +188,7 @@ v3.0
   - `call Hill_fnc_cleaner`
 
 ---
-v2.30  
+v2.30
 28 JUN 2016
 
 ---
@@ -191,9 +204,9 @@ v2.30
   - Added callsign information to group names.
   - Added playable slots for BN Leadership.
 * Added TFAR frequency modules to set default SR radio freq. as per Comms. card.
-	
+
 ---
-v2.28  
+v2.28
 21 APR 2016
 
 ---
@@ -202,7 +215,7 @@ v2.28
 * Added 'enableEnvironment false;' command to init.sqf to disable bees, butterflies, birds, rabbits, snakes and environmental sounds, crickets etc.
 
 ---
-v2.28  
+v2.28
 10 APR 2016
 
 ---
@@ -229,9 +242,9 @@ v2.28
   - Can be set off or on in the mission parameters in the lobby before starting the mission.
   - Admin can turn auto spectate on and off during the mission via the action menu.
 * Added init.sqf
-	 
+
 ---
-v2.25  
+v2.25
 23 FEB 2016
 
 ---
@@ -239,9 +252,9 @@ v2.25
 * Removed scripted (BIS) module supports to Co. and Plt. units.  Virtual Supply drop and Virtual Air transport.
 * Removed variable for possible future compatibility with TAW view distance
   - View distance is adjustable by via ACE 3
-	 
+
 ---
-v2.20  
+v2.20
 21 JAN 2016
 
 ---
@@ -273,14 +286,14 @@ v2.20
 * Fixed error in `RespawnTemplatesWest[] = {};`
 
 ---
-v2.15  
+v2.15
 23 DEC 2015
 
 ---
 * Removed MCC Dependency
 
 ---
-v2.10  
+v2.10
 23 DEC 2015
 
 ---
@@ -291,7 +304,7 @@ v2.10
 * Added separate respawnTemplates for each faction 
 
 ---
-v2.10  
+v2.10
 8 DEC 2015
 
 ---
@@ -303,7 +316,7 @@ v2.10
 * Changed respawnDelay in `description.ext` from 10s to 3s
 
 ---
-v2.10  
+v2.10
 28 NOV 2015
 
 ---
@@ -314,7 +327,7 @@ v2.10
 * Changed `respawnDelay` in `description.ext` from 4s to 10s
 
 ---
-v2.00  
+v2.00
 12 AUG 2015
 
 ---
@@ -323,7 +336,7 @@ v2.00
 * Adjusted MCC Settings modules to turn off UI interface and cover/mounted actions.
 
 ---
-v2.00  
+v2.00
 23 JUN 2015
 
 ---
@@ -339,7 +352,7 @@ on what is set in profileNamespace from setUnitInsignia.sqf (because the Arsenal
 * Added `setTerrainGrid 50;` to `initPlayerLocal.sqf` to force grass level to "low".
 * Added Time and Weather parameters to mission lobby.
 * Added functionality for 2D task waypoints and 3D task markers in the description.ext
-	
+
 ---
 v1.03
 
@@ -348,7 +361,7 @@ v1.03
 * Tweaks to TFAR module
 
 ---
-v1.02  
+v1.02
 9 NOV 2014
 
 ---
@@ -363,7 +376,7 @@ v1.02
 * NOTE: RP_VArsenalDrop.sqf is still not removing the addAction from all players of the callers' side... WIP...
 
 ---
-v1.01  
+v1.01
 21 OCT 2014
 
 ---
@@ -375,7 +388,7 @@ v1.01
 from player's body upon death.
 
 ---
-v1.00  
+v1.00
 17 OCT 2014
 
 ---

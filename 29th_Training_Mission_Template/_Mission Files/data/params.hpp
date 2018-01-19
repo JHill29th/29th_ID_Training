@@ -12,3 +12,11 @@
 		texts[] = {"No (Default)","Yes"};
 		default = 0;
   };
+
+	class artilleryComputer 
+  {
+		title = "Artillery Computer";
+		values[] = {0,1};
+		texts[] = {"Off (Default)","On"};
+		default = 0;
+  };
