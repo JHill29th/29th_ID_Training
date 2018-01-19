@@ -10,6 +10,9 @@ v3.6
   - Available in the lobby via `Parameters -> Artillery Computer
   - Default selection is `Off`
 * Removed some old commented code from various places.
+* Changed `scripts\excludeObjectsFromZeus.sqf`
+  - Added missing opfor and grnfor curator game master modules
+  - Changed loop time from 5 sec. to 3 sec.
 
 ---
 v3.6  
