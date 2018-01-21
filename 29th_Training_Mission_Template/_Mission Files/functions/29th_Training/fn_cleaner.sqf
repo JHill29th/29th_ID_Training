@@ -20,7 +20,6 @@ _all_garbages = [_posBlu,_posRed,_posGreen];
 
 	//  get nearest objs around each object
 _near_objects =  { nearestObjects [_x,["WeaponHolder","GroundWeaponHolder"],250]; } forEach _all_garbages;
-
 	//  count the strings in each array
 _countObjects = count _near_objects;
 _countDead = count _dead;

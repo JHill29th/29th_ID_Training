@@ -1,6 +1,13 @@
 dev = "Rellikplug";
 
+class Header {
+  gameType = SANDBOX;
+  minPlayers = 1;
+  maxPlayers = 201; //Total number of playable units placed in the editor including virtual entities
+};
+
 OnLoadName = "29th Training V3.6";
+briefingName = "29th Training V3.6";
 // =========================== Loading Screen
 Author = "CW3 Hill";
 loadScreen =  "Pictures\116Inf InsigniaAlpha.paa";
@@ -8,13 +15,30 @@ loadScreen =  "Pictures\116Inf InsigniaAlpha.paa";
 OnLoadMission = "<t align='center'><t size='1.5' color='#2A1ADC'>BLUFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>OPFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>GRNFOR</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
 OnLoadMissionTime = 1;
 OverviewText = "<t align='center'><t size='1.5' color='#2A1ADC'>BLUFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>OPFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>GRNFOR</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
-//OverviewPicture = "Pictures\116Inf InsigniaAlpha.paa";
+OverviewPicture = "Pictures\116Inf InsigniaAlpha.paa";
 
 respawnOnStart = 0;
+respawn = 3;
+respawnDelay = 15;
+respawnDialog = 0;
 
+respawnTemplates[] = {"Spectator", "MenuPosition", "MenuInventory"};
+
+enableDebugConsole = 1;
+disabledAI = 1;
+forceRotorLibSimulation = 0;
 //disableChannels[] = {{0,false,true},{1,false,true},{2,false,true},{3,true,true},{4,true,true},{5,true,true},{6,false,true}};
+saving = 0;
 
-//respawnTemplates[] = {"Spectator"};
+debriefing = 1;
+showGPS = 1;
+showCompas = 1;
+showMap = 0;
+showNotePad = 1;
+showWatch = 1;
+showUAVFeed = 1;
+
+taskManagement_propagate = 1;
 
 class CfgFunctions 
 {
