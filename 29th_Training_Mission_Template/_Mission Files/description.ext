@@ -15,7 +15,7 @@ loadScreen =  "Pictures\116Inf InsigniaAlpha.paa";
 OnLoadMission = "<t align='center'><t size='1.5' color='#2A1ADC'>BLUFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>OPFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>GRNFOR</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
 OnLoadMissionTime = 1;
 OverviewText = "<t align='center'><t size='1.5' color='#2A1ADC'>BLUFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>OPFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>GRNFOR</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
-OverviewPicture = "Pictures\116Inf InsigniaAlpha.paa";
+//OverviewPicture = "Pictures\116Inf InsigniaAlpha.paa"; //doesn't work on a dedicated server
 
 respawnOnStart = 0;
 respawn = 3;
