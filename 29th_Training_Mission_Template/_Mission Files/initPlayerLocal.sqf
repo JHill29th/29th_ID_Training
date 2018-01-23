@@ -13,6 +13,7 @@ _didJIP = _this select 1;
 
 enableSentences false;
 enableEnvironment false;
+simulWeatherSync;
 
 if (artilleryComputer == 0) then {
   enableEngineArtillery false; 

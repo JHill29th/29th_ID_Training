@@ -3,8 +3,6 @@ Executed only on server when mission is started.
 */
 diag_log text format ["|=============================   %1: initServer.sqf Running   =============================|", missionName];
 
-//execVM "scripts\time_check.sqf";
-
 if (count (entities "HeadlessClient_F") > 0) then {
 	systemChat "Headless Client is online. Spawned units will be transferred to the HC.";
 	hc_online = true;
@@ -32,3 +30,5 @@ artilleryComputer = "artilleryComputer" call BIS_fnc_getParamValue;
 publicVariable "artilleryComputer";
 
 execVM "scripts\excludeObjFromZeus.sqf";
+
+execVM "scripts\dateAndWeather.sqf";
