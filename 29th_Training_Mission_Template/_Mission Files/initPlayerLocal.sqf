@@ -13,7 +13,6 @@ _didJIP = _this select 1;
 
 enableSentences false;
 enableEnvironment false;
-simulWeatherSync;
 
 if (artilleryComputer == 0) then {
   enableEngineArtillery false; 
@@ -21,7 +20,7 @@ if (artilleryComputer == 0) then {
 
 [_theClient] spawn Hill_fnc_handleInitialInventory;
 
-sleep 1;
+//sleep 1;
 
 // ==============================================================================
 

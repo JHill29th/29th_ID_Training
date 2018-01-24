@@ -30,5 +30,3 @@ artilleryComputer = "artilleryComputer" call BIS_fnc_getParamValue;
 publicVariable "artilleryComputer";
 
 execVM "scripts\excludeObjFromZeus.sqf";
-
-execVM "scripts\dateAndWeather.sqf";
