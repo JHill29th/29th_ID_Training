@@ -24,6 +24,9 @@ curatorExcludedObjects = [] spawn {
 				} forEach allCurators;
 			};
 		} forEach _excluded;
+    if (count _editableObjects > 1000) then {
+      _editableObjects = [];
+    };
 		sleep 3;
 	};
 };
