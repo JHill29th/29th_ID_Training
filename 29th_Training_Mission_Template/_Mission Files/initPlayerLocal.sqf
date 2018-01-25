@@ -20,7 +20,7 @@ if (artilleryComputer == 0) then {
 
 [_theClient] spawn Hill_fnc_handleInitialInventory;
 
-sleep 1;
+//sleep 1;
 
 // ==============================================================================
 
