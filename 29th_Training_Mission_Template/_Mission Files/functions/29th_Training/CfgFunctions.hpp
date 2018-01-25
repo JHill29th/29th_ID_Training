@@ -11,5 +11,6 @@ class 29th_Training {
     class handleInitialInventory {};
     class noThermals {};
     class adjustRating {};
+    //class activateAddons {preInit = 1;};
   };
 };
