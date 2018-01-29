@@ -1,7 +1,8 @@
 comment "29th Infantry Division";
-comment "Opfor Desert OPFOR";
+comment "Opfor Desert Rifleman";
 comment "Requires ACE3, RHS, and 29th mod";
 comment "Designed for Basic medical settings";
+comment "Updated on: 01/24/2018";
 
 _man = _this select 1;
 
@@ -21,39 +22,31 @@ removeGoggles _man;
 
 comment "Add containers";
 _man forceAddUniform "rhs_uniform_emr_des_patchless";
-_man addItemToUniform "ACE_DefusalKit";
-_man addItemToUniform "ACE_Clacker";
-_man addItemToUniform "ACE_IR_Strobe_Item";
 _man addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 10 do {_man addItemToUniform "ACE_fieldDressing";};
-_man addItemToUniform "ACE_CableTie";
-_man addItemToUniform "ACE_EntrenchingTool";
-for "_i" from 1 to 3 do {_man addItemToUniform "ACE_morphine";};
-_man addItemToUniform "ACE_MapTools";
-_man addItemToUniform "ACE_Flashlight_KSF1";
-_man addItemToUniform "SmokeShell";
+for "_i" from 1 to 8 do {_man addItemToUniform "ACE_fieldDressing";};
+for "_i" from 1 to 6 do {_man addItemToUniform "ACE_morphine";};
+for "_i" from 1 to 2 do {_man addItemToUniform "ACE_epinephrine";};
+for "_i" from 1 to 2 do {_man addItemToUniform "rhs_mag_rdg2_black";};
 _man addVest "rhs_6b23_6sh116";
-_man addItemToVest "rhs_1PN138";
-for "_i" from 1 to 7 do {_man addItemToVest "rhs_30Rnd_545x39_7N22_AK";};
-for "_i" from 1 to 3 do {_man addItemToVest "rhs_mag_rgd5";};
+for "_i" from 1 to 8 do {_man addItemToVest "rhs_30Rnd_545x39_7N22_AK";};
+for "_i" from 1 to 4 do {_man addItemToVest "rhs_mag_rgd5";};
 _man addItemToVest "rhs_mag_rdg2_black";
-_man addItemToVest "ACE_HandFlare_White";
-for "_i" from 1 to 2 do {_man addItemToVest "SmokeShell";};
-_man addItemToVest "Chemlight_red";
-_man addItemToVest "rhs_mag_9x19_17";
-_man addHeadgear "rhs_6b7_1m_olive";
+for "_i" from 1 to 2 do {_man addItemToVest "rhs_mag_9x19_17";};
+_man addBackpack "rhs_assault_umbts";
+_man addItemToBackpack "rhs_1PN138";
+_man addItemToBackpack "ACE_CableTie";
+_man addItemToBackpack "ACE_EntrenchingTool";
+_man addItemToBackpack "ACE_Flashlight_XL50";
+_man addHeadgear "rhs_6b7_1m";
 
 comment "Add weapons";
 _man addWeapon "rhs_weap_ak74m";
-_man addPrimaryWeaponItem "rhs_acc_dtk";
 _man addWeapon "rhs_weap_pya";
-reload _man;
 _man addWeapon "Binocular";
 
 comment "Add items";
 _man linkItem "ItemMap";
 _man linkItem "ItemCompass";
 _man linkItem "tf_microdagr";
+_man linkItem "ItemRadio";
 _man linkItem "ItemGPS";
-
-_man addItemToVest "rhs_30Rnd_545x39_7N22_AK";

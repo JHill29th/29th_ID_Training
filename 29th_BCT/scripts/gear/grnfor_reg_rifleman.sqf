@@ -1,7 +1,8 @@
 comment "29th Infantry Division";
-comment "Grnfor Woodland GRNFOR";
+comment "Grnfor Regular Rifleman";
 comment "Requires ACE3, RHS, and 29th mod";
 comment "Designed for Basic medical settings";
+comment "Updated on: 01/24/2018";
 
 _man = _this select 1;
 
@@ -20,37 +21,36 @@ removeHeadgear _man;
 removeGoggles _man;
 
 comment "Add containers";
-_man forceAddUniform "rhsgref_uniform_ERDL";
+_man forceAddUniform "rhsgref_uniform_altis_lizard";
 _man addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 10 do {_man addItemToUniform "ACE_fieldDressing";};
+for "_i" from 1 to 8 do {_man addItemToUniform "ACE_fieldDressing";};
+for "_i" from 1 to 6 do {_man addItemToUniform "ACE_morphine";};
+for "_i" from 1 to 2 do {_man addItemToUniform "ACE_epinephrine";};
 _man addItemToUniform "ACE_CableTie";
-for "_i" from 1 to 2 do {_man addItemToUniform "ACE_morphine";};
-_man addItemToUniform "ACE_Chemlight_Shield";
-_man addItemToUniform "ACE_Flashlight_MX991";
-_man addItemToUniform "ACE_HandFlare_White";
-_man addItemToUniform "rhsusf_mag_17Rnd_9x19_FMJ";
 for "_i" from 1 to 2 do {_man addItemToUniform "SmokeShell";};
-_man addItemToUniform "SmokeShellGreen";
-_man addItemToUniform "Chemlight_green";
+_man addItemToUniform "rhsusf_mag_17Rnd_9x19_FMJ";
 _man addVest "rhsgref_6b23_khaki_rifleman";
-_man addItemToVest "rhs_1PN138";
-for "_i" from 1 to 2 do {_man addItemToVest "rhs_mag_m67";};
-for "_i" from 1 to 7 do {_man addItemToVest "rhsgref_30rnd_556x45_m21";};
-_man addItemToVest "rhsgref_30rnd_556x45_m21_t";
-_man addHeadgear "rhsgref_helmet_pasgt_woodland";
+for "_i" from 1 to 6 do {_man addItemToVest "rhs_30Rnd_762x39mm_Savz58";};
+_man addItemToVest "rhs_mag_rgn";
+_man addItemToVest "rhs_mag_rgo";
+_man addBackpack "rhs_sidor";
+_man addItemToBackpack "ACE_Flashlight_MX991";
+_man addItemToBackpack "rhs_1PN138";
+_man addItemToBackpack "SmokeShellRed";
+_man addItemToBackpack "SmokeShellBlue";
+_man addItemToBackpack "rhsusf_mag_17Rnd_9x19_JHP";
+_man addItemToBackpack "rhsusf_mag_17Rnd_9x19_FMJ";
+_man addItemToBackpack "rhs_mag_rgn";
+_man addItemToBackpack "rhs_mag_rgo";
+_man addHeadgear "rhsgref_helmet_pasgt_altis_lizard";
 
 comment "Add weapons";
-_man addWeapon "rhs_weap_m21a";
-_man addPrimaryWeaponItem "rhsusf_acc_SF3P556";
-_man addPrimaryWeaponItem "rhs_acc_perst1ik";
+_man addWeapon "rhs_weap_savz58p_black";
 _man addWeapon "rhsusf_weap_glock17g4";
-reload _man;
 _man addWeapon "Binocular";
 
 comment "Add items";
 _man linkItem "ItemMap";
 _man linkItem "ItemCompass";
-_man linkItem "ItemWatch";
+_man linkItem "ItemRadio";
 _man linkItem "ItemGPS";
-
-_man addItemToVest "rhsgref_30rnd_556x45_m21";
