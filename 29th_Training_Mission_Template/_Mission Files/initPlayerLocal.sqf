@@ -12,7 +12,7 @@ _didJIP = _this select 1;
 //5 enableChannel [true,false]; //direct
 
 enableSentences false;
-enableEnvironment false;
+enableEnvironment [false, true];
 
 if (artilleryComputer == 0) then {
   enableEngineArtillery false; 
