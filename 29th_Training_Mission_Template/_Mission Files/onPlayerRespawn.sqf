@@ -4,13 +4,10 @@ Executed locally (client only) when player respawns in a multiplayer mission.
 		- This event script will also fire at the beginning of a mission if respawnOnStart is 0 or 1, oldUnit will be objNull in this instance.
 		- This script will not fire at mission start if respawnOnStart equals -1 in description.ext
 */
-private ["_newUnit","_oldUnit","_side"];
-_newUnit = _this select 0;
-_oldUnit = _this select 1;
-
-_side = side (group _oldUnit);
+params ["_newUnit", "_oldUnit", "_typeRespawn", "_delayRespawn"];
 
 if (isNull _oldUnit) then {
+  [_newUnit, ""] call BIS_fnc_setUnitInsignia;
   _newUnit spawn Hill_fnc_setInsignia;
 
 //  [_newUnit] call Hill_fnc_playerAdmin;
@@ -28,6 +25,13 @@ if (isNull _oldUnit) then {
 };
 
 if !(isNull _oldUnit) then {
+  [_newUnit] spawn {
+    _newUnit = _this select 0;
+    waitUntil {alive _newUnit};
+    sleep 1;
+    [_newUnit, ""] call BIS_fnc_setUnitInsignia;
+    _newUnit spawn Hill_fnc_setInsignia;
+  };
 //  enableEnvironment false;
 //  {_x addCuratorEditableObjects [[player],false];} count allCurators;  // Add player back to Zeus(s)
 //  [ _newUnit, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory; // load player's inventory

@@ -25,7 +25,6 @@ if (artilleryComputer == 0) then {
 // ==============================================================================
 
 [_theClient] execVM "scripts\player_arsenal_handlers.sqf";
-_theClient addEventHandler ["Respawn", {_this select 0 spawn Hill_fnc_setInsignia;}];
 
 [_theClient] spawn {
  private _theClient = _this select 0;
