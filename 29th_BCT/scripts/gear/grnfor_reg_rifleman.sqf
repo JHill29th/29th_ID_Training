@@ -4,9 +4,13 @@ comment "Requires ACE3, RHS, and 29th mod";
 comment "Designed for Basic medical settings";
 comment "Updated on: 01/24/2018";
 
-_man = _this select 1;
+private _man = _this select 1;
 
-["Open",true] spawn BIS_fnc_arsenal;
+if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+  [_man, _man, true] call ace_arsenal_fnc_openBox;
+} else {
+  ["Open",true] spawn BIS_fnc_arsenal;
+};
 
 sleep 1;
 
