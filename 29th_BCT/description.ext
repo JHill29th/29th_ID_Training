@@ -29,6 +29,7 @@ class CfgFunctions {
 			class DKH {};
 			class DKH_targets_hit {};
 			class setInsignia {};
+      class transferVAtoAA {};
 		};
 	};
 };

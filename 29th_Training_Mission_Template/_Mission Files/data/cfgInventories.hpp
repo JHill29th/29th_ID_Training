@@ -9,8 +9,8 @@
 			"rhs_weap_m4a1"
 		};
 		magazines[] = {
-			"rhs_mag_30Rnd_556x45_M200_Stanag",
-			"rhs_mag_30Rnd_556x45_M200_Stanag"
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag"
 		};
 		items[] = {
 			"ACE_EarPlugs",

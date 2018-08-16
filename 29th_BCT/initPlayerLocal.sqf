@@ -21,20 +21,22 @@ if (!isServer) then { //run only if not server / MP host and not headless client
 
 sleep 1;
 
-[_theClient] spawn {waitUntil {player == player}; _this select 0 call RP_fnc_setInsignia;};
+_theClient spawn RP_fnc_setInsignia;
 
 if !(isClass (configFile >> "CfgPatches" >> "29th_Insignias")) then {
 	execVM "scripts\29th Actions\29thActions.sqf";
 };
 
+[_theClient] execVM "scripts\player_arsenal_handlers.sqf";
+
 //Save loadout when ever we exit an arsenal
-[missionNamespace, "arsenalClosed", {
+/*[missionNamespace, "arsenalClosed", {
 	player call RP_fnc_setInsignia; //apply insignia
 	[player, [missionNamespace, "Current Inventory"]] call BIS_fnc_saveInventory;
 	[player, ["missionNamespace:Current Inventory"]] call BIS_fnc_setRespawnInventory;
 	systemChat "Your gear has been saved.";
 	hintSilent "Your gear has been saved.";
-}] call BIS_fnc_addScriptedEventHandler;
+}] call BIS_fnc_addScriptedEventHandler;*/
 
 
 if (!isNil "di") then {

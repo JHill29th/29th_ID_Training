@@ -9,5 +9,5 @@ _oldUnit = _this select 1;
 
 if !(isNull _oldUnit) then {
 //	[ player, [ missionNamespace, "Current Inventory" ] ] call BIS_fnc_loadInventory; // load player's inventory
-	_newUnit call RP_fnc_setInsignia; // apply player's insignia 
+	_newUnit spawn RP_fnc_setInsignia; // apply player's insignia 
 };
