@@ -1,4 +1,12 @@
 ---
+v3.7  
+19 AUG 2018
+
+---
+
+* Removed vanilla "Virtual Arsenal" and "Transfer VA to AA" options from base boxes.
+
+---
 v3.6  
 19 JAN 2018
 
