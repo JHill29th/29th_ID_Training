@@ -6,11 +6,13 @@
  
 		// Loadout definition, uses same entries as CfgVehicles classes
 		weapons[] = {
-			"rhs_weap_m4a1"
+			"rhs_weap_m1garand_sa43"
 		};
 		magazines[] = {
-			"rhs_mag_30Rnd_556x45_M855A1_Stanag",
-			"rhs_mag_30Rnd_556x45_M855A1_Stanag"
+			"rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle",
+			"rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle",
+      "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle",
+      "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle"
 		};
 		items[] = {
 			"ACE_EarPlugs",

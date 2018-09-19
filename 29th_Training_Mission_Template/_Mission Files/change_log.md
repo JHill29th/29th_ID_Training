@@ -1,10 +1,14 @@
 ---
 v3.7  
-19 AUG 2018
+29 AUG 2018
 
 ---
 
-* Removed vanilla "Virtual Arsenal" and "Transfer VA to AA" options from base boxes.
+* Changed BLUFOR Parade starting loadout in `data\cfgInventories.hpp`
+  - Removed M4A1 (`rhs_weap_m4a1`) and associated M855A1 magazines (`rhs_mag_30Rnd_556x45_M855A1_Stanag`)
+  - Added M1 Garand (`rhs_weap_m1garand_sa43`) with 4, 8 round magazines (`rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle`)
+* Changed addActions for base ammo boxes in `scripts\baseObjectsInit.sqf`
+  - Removed action menu items for `Transfer VA to AA` and `Virtual Arsenal` if Ace is running
 
 ---
 v3.6  

@@ -6,10 +6,10 @@ class Header {
   maxPlayers = 201; //Total number of playable units placed in the editor including virtual entities
 };
 
-OnLoadName = "29th Training V3.6";
-briefingName = "29th Training V3.6";
+OnLoadName = "29th Training V3.7";
+briefingName = "29th Training V3.7";
 // =========================== Loading Screen
-Author = "CW3 Hill";
+Author = "Cpt. Hill";
 loadScreen =  "Pictures\116Inf InsigniaAlpha.paa";
 //OnLoadMission = "NATO | CSAT | AAF Training Tandbox";
 OnLoadMission = "<t align='center'><t size='1.5' color='#2A1ADC'>BLUFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#B40404'>OPFOR</t><t size='1.5' color='#FFFFFF'> | </t><t size='1.5' color='#088A08'>GRNFOR</t><br/><t size='1.25' color='#A09FAB'> Training Sandbox</t><br/>Ever Forward!</t>";
