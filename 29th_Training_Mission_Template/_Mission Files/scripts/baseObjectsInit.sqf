@@ -11,8 +11,8 @@ _garbages = [blu_garbage,red_garbage,green_garbage];
 {
   if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
     _x addAction ["<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\gear_ca.paa'/><t color='#bf3eff'>  Ace Arsenal</t>", {[_this select 1, _this select 1, true] call ace_arsenal_fnc_openBox;}];
-    _x addAction ["<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\gear_ca.paa'/><t color='#bf3eff'>  Transfer VA to AA</t>", {[] spawn Hill_fnc_transferVAtoAA;}];
-    _x addAction ["<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\gear_ca.paa'/><t color='#bf3eff'>  Virtual Arsenal</t>", {["Open", true] spawn BIS_fnc_arsenal;}];
+//    _x addAction ["<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\gear_ca.paa'/><t color='#bf3eff'>  Transfer VA to AA</t>", {[] spawn Hill_fnc_transferVAtoAA;}];
+//    _x addAction ["<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\gear_ca.paa'/><t color='#bf3eff'>  Virtual Arsenal</t>", {["Open", true] spawn BIS_fnc_arsenal;}];
   } else {
     _x addAction ["<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\gear_ca.paa'/><t color='#bf3eff'>  Virtual Arsenal</t>", {["Open", true] spawn BIS_fnc_arsenal;}];
   };
