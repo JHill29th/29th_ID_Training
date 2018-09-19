@@ -1,6 +1,6 @@
-# 29th Infantry Division Training - http://www.29th.org
-Missions & Scripts for Arma 3 
-[29th Infantry Division Website](http://www.29th.org) 
+# 29th Infantry Division Training Mission Templates
+Missions & Scripts for Arma 3  
+[29th Infantry Division Website](http://www.29th.org)  
 [29th Infantry Division Forums](http://forums.29th.org) 
 
 ### Contributors
