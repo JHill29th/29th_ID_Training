@@ -22,8 +22,8 @@
 			"ACE_morphine"
 		};
 		linkedItems[] = { //hats, vests, attachments, optics
-			"rhsusf_patrolcap_ocp", /*"29th_Helmet"*/
-			"rhsusf_iotv_ocp",
+			"29th_rhs_patrolcap_ocp_retex", //"rhsusf_patrolcap_ocp"
+			"29th_rhs_iotv_ocp_base_retex", //rhsusf_iotv_ocp
 			"ItemMap",
 			"ItemCompass",
 		//	"ItemWatch",
@@ -31,7 +31,7 @@
 			"tf_microdagr",
 			"tf_anprc152"
 		};
-		uniformClass = "rhs_uniform_cu_ocp"; /*"U_B_CombatUniform_mcam"*/
+		uniformClass = "29th_rhs_combat_uniform_ocp_retex"; //"rhs_uniform_cu_ocp"
 		backpack = "";
 		
 	//	insignia = "";

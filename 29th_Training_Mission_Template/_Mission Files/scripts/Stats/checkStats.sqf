@@ -3,7 +3,7 @@ Written by Hill [29th ID] AKA Rellikplug
 */
 
 private ["_name","_shots","_targetsHit","_hits","_accuracy","_deaths"];
-//  Get tha player's name
+//  Get the player's name
 _name = name player;
 //Retrieve the variables set in init_stats.sqf at current values
 _shots = player getVariable "ShotsTaken";

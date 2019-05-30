@@ -1,8 +1,8 @@
 /*
 Executed locally (only on client) when player joins mission (includes both mission start and JIP)
 */
-_theClient = _this select 0;
-_didJIP = _this select 1;
+diag_log text format ["|=============================   %1: initPlayerLocal.sqf Running   =============================|", missionName];
+params ["_theClient","_didJIP"];
 
 //0 enableChannel [true,false]; //global
 //1 enableChannel [true,false]; //side
@@ -14,8 +14,22 @@ _didJIP = _this select 1;
 enableSentences false;
 enableEnvironment [false, true];
 
-if (artilleryComputer == 0) then {
-  enableEngineArtillery false; 
+[] spawn {
+  if (isNil "artilleryComputer") then {
+    waitUntil {!isNil "artilleryComputer"};
+    if (artilleryComputer == 0) then {
+      enableEngineArtillery false;
+    };
+  };
+//restrict thermals
+  if (isNil "disabledTI") then {
+    waitUntil {!isNil "disabledTI"};
+    if (disabledTI == 0) then {
+      ["visionMode", {
+        [_this] spawn Hill_fnc_noThermals;
+      }] call CBA_fnc_addPlayerEventHandler;
+    };
+  };
 };
 
 [_theClient] spawn Hill_fnc_handleInitialInventory;
@@ -26,6 +40,14 @@ if (artilleryComputer == 0) then {
 
 [_theClient] execVM "scripts\player_arsenal_handlers.sqf";
 
+_theClient addEventHandler ["HandleRating", {
+	params ["_unit"];
+    if (rating _unit < 0) then {
+     [0,_unit] call Hill_fnc_adjustRating;
+    };
+}];
+
+/*
 [_theClient] spawn {
  private _theClient = _this select 0;
   while {true} do {
@@ -35,7 +57,7 @@ if (artilleryComputer == 0) then {
   sleep 0.3;
   };
 };
-
+*/
 //If the respawn menu button is active
 if (!isNumber (missionConfigFile >> "respawnButton") || {getNumber (missionConfigFile >> "respawnButton") > 0}) then {
   _respawnMenu = [] spawn {
@@ -57,16 +79,6 @@ _null = [] execVM "scripts\voice_control\voiceControl.sqf";
 //Initializes the player stats
 //[_theClient] execVM "scripts\Stats\init_stats.sqf";
 
-//Call the admin check function on the player
-//[_theClient] call Hill_fnc_playerAdmin;
-
-//restrict thermals
-if (disabledTI == 0) then {
-  ["visionMode", {
-    [_this] spawn Hill_fnc_noThermals;
-  }] call CBA_fnc_addPlayerEventHandler;
-};
-
 [_theClient] spawn {
   private ["_theMan"];
   _theMan = _this select 0;
@@ -76,3 +88,5 @@ if (disabledTI == 0) then {
     _theMan action ["WeaponOnBack", _theMan];
    };
  };
+ 
+[_theClient] execVM "scripts\checkCuratorAssignment.sqf";

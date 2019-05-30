@@ -1,4 +1,30 @@
 ---
+v3.8  
+29 AUG 2018
+
+---
+
+* Fixed some group names not entered for some groups for some scenarios
+* Fixed wrong version displayed in loading screen of some scenarios
+* Changed `data\cfginventories.hpp` to use new 29th OCP items for BLUFOR parade loadout
+* Removed reference to `scripts\recognise.sqf` from `initPlayerLocal.sqf`
+  - Script didn't exist in folder and this is done server side now anyway
+* Removed `functions\29th_Training\fn_activateAddons.sqf`
+  - This failed attempt at wizardry is obsolete
+* Removed `functions\29th_Training\fn_playerAdmin.sqf`
+  - This wizardry is obsolete
+* Added curator assignment check to (hopefully) fix having to respawn for curator access
+  - `scripts\checkCuratorAssignment.sqf` called from `initPlayerLocal.sqf`
+  - `functions\29th_Training\fn_assignCurator.sqf` called by `scripts\checkCuratorAssignment.sqf`
+* Added `hideObjectGlobal true` and `hideObjectGlobal false` to newly respawned unit in `onPlayerRespawn.sqf`
+  - (hopefully) prevent briefly seeing the respawned player at the player's death location.
+* Changed distance base arsenal is available as an action in `scripts\baseObjectsInit.sqf`
+  - Increased distance from 50 metres to 75 metres
+* Changed addAction for spectator terminals, arsenal ammo boxes, and garbage cans in `scripts\baseObjectsInit.sqf`
+  - Removed the condition parameter check for caller's distance to object and replaced with radius parameter
+* Removed obsolete argument variable from function `functions\29th_Training\fn_cleaner.sqf`
+
+---
 v3.7  
 29 AUG 2018
 

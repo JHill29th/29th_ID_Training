@@ -27,10 +27,14 @@ if (isNull _oldUnit) then {
 if !(isNull _oldUnit) then {
   [_newUnit] spawn {
     _newUnit = _this select 0;
+    _newUnit hideObjectGlobal true;
     waitUntil {alive _newUnit};
     sleep 1;
     [_newUnit, ""] call BIS_fnc_setUnitInsignia;
     _newUnit spawn Hill_fnc_setInsignia;
+    if (isObjectHidden _newUnit) then { 
+      _newUnit hideObjectGlobal false;
+    };
   };
 //  enableEnvironment false;
 //  {_x addCuratorEditableObjects [[player],false];} count allCurators;  // Add player back to Zeus(s)

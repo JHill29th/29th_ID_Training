@@ -1,9 +1,7 @@
 /*
 Written by Hill [29th ID] AKA Rellikplug
 */
-
-private ["_unit"];
-_unit = _this select 0;
+params ["_unit"];
 
 //Preparing variables
 _shots = _unit setVariable ["ShotsTaken", 0];
@@ -42,3 +40,14 @@ numDeaths = _unit addeventHandler ["killed", {
 	_unit = _this select 0;
 		_unit setVariable ["Deaths", (_unit getVariable "Deaths") + 1];
 }];
+
+_unit addAction [
+  "Check Statistics",
+  "scripts\Stats\checkStats.sqf",
+  [],
+  0,
+  false,
+  true,
+  "",
+  "(_caller == _target && (_caller distance res_blu <= 30 || _target distance res_red <= 30 || _target distance res_grn <= 30))"
+];

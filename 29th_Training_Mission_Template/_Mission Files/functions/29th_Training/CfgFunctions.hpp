@@ -4,13 +4,12 @@ class 29th_Training {
     file = "functions\29th_Training";
     class removeAllRespawnInventory {};
     class spectator {};
-    //class playerAdmin {};
     class cleaner {};
     class setInsignia {};
     class transferVAtoAA {};
     class handleInitialInventory {};
     class noThermals {};
     class adjustRating {};
-    //class activateAddons {preInit = 1;};
+    class assignCurator {};
   };
 };

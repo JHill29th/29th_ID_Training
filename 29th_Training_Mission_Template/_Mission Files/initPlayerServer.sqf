@@ -1,9 +1,8 @@
 /*
 Executed only on server when a player joins mission (includes both mission start and JIP). 
 */
-private ["_theClient"];
-
-_theClient = _this select 0;
+diag_log text format ["|=============================   %1: initPlayerServer.sqf Running   =============================|", missionName];
+params ["_theClient"];
 
 {
 	_x addCuratorEditableObjects [[_theClient],true];

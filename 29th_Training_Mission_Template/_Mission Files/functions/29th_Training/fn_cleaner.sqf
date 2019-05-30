@@ -3,12 +3,11 @@
 	this addAction ["<img image='\A3\Ui_f\data\IGUI\Cfg\simpleTasks\types\repair_ca.paa'/><t color='#FF0080'>Clean-Up</t>","call Hill_fnc_cleaner","blu",1,false,true,"","((_target distance _this) < 2)"];	=
 ===============================================================================================*/
 
-private ["_target","_caller","_id","_arg","_dead","_posBlu","_posRed","_posGreen","_all_garbages","_near_objects","_countObjects","_countDead","_countAllNear"];
+private ["_target","_caller","_id","_dead","_posBlu","_posRed","_posGreen","_all_garbages","_near_objects","_countObjects","_countDead","_countAllNear"];
 
 _target = _this select 0;
 _caller = _this select 1;
 _id = _this select 2;
-_arg = _this select 3;  // for multiple args use an array and <(_this select 3 select 0)>
 
 _dead = allDeadMen;
 
