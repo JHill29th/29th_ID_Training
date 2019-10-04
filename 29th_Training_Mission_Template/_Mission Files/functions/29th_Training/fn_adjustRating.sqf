@@ -1,7 +1,7 @@
-params ["_ratingToSet","_unit"];
+params ["_ratingOfUnit","_unit"];
 
 _setVal = (rating _unit) * 0;
-_addVal = _setVal + _ratingToSet;
+_addVal = _setVal + _ratingOfUnit;
 
 _unit addRating _addVal;
 

@@ -20,3 +20,11 @@
 		texts[] = {"Off (Default)","On"};
 		default = 0;
   };
+  
+  class removeRadiosFromDead 
+  {
+		title = "Remove radios from dead players?";
+		values[] = {0,1};
+		texts[] = {"No","Yes (Default)"};
+		default = 1;
+  };

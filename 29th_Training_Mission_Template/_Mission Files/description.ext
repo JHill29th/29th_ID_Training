@@ -26,7 +26,7 @@ respawnTemplates[] = {"Spectator", "MenuPosition", "MenuInventory"};
 enableDebugConsole = 1;
 disabledAI = 1;
 forceRotorLibSimulation = 0;
-//disableChannels[] = {{0,false,true},{1,false,true},{2,false,true},{3,true,true},{4,true,true},{5,true,true},{6,false,true}};
+//disableChannels[] = {{0,false,false},{1,false,true},{2,true,true},{3,false,true},{4,false,true},{5,false,true},{6,false,false}};
 saving = 0;
 
 debriefing = 1;
@@ -39,6 +39,7 @@ showUAVFeed = 1;
 
 taskManagement_propagate = 1;
 
+allowFunctionsRecompile = 1;
 class CfgFunctions 
 {
 	#include "functions\curator\CfgFunctions.hpp"  // Curator sync https://forums.bistudio.com/topic/166808-making-placed-units-be-editable-for-every-zeus/#entry2607581

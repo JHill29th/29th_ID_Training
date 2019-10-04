@@ -1,6 +1,64 @@
 ---
-v3.8  
-29 AUG 2018
+v3.8
+18 SEP 2018
+
+---
+
+* Changed location of `saveProfileNamespace` as part of stats system
+  - Moved from `onPlayerKilled.sqf` to `functions\29th_Training\fn_checkStats.sqf`
+* Removed failed attempt at wizardry from `onPlayerRespawn.sqf` that was attempting to prevent respawn ghost issue.
+  - This issue is a BIS created problem and it is stupid.
+* 
+
+---
+v3.8
+16 SEP 2018
+
+---
+
+* Tweaked `onPlayerRespawn.sqf`
+  - (hopefully) prevent briefly seeing the respawned player at the player's death location.
+
+---
+v3.8
+10 SEP 2018
+
+---
+
+* Changed stats system
+  - Save variables to `profileNamespace` instead of the player object in `scripts\init_stats.sqf`
+    - **This will allow player stats to persist between team switching and game sessions.**
+  - Moved `scripts\Stats\init_stats.sqf` from `\Stats` folder to `\scripts` folder
+  - Changed `scripts\Stats\checkStats.sqf` to a registered function `Hill_fnc_checkStats`
+    - Adds file `functions\29th_Training\fn_checkStats.sqf`
+    - Alters file `functions\29th_Training\CfgFunctions.cfg`
+    - Alters file `scripts\init_stats.sqf` to call the new function `Hill_fnc_checkStats` instead of the removed script file
+    - Removed obsolete folder `\scripts\Stats`
+  - Added an `addAction` option to reset statistics in `scripts\init_stats.sqf`
+* Tweaked `onPlayerRespawn.sqf`
+  - (hopefully) prevent briefly seeing the respawned player at the player's death location.
+* Changed how the check for curator assignment is handled
+  - Operation is now completely server side
+  - Fixes an error that caused the function to fail
+  - Re-wrote `functions\29th_Training\fn_assignCurator.sqf`
+  - Moved script call `execVM "scripts\checkCuratorAssignment.sqf";` from `initPlayerServer.sqf` to `initServer.sqf`
+* Removed obsolete function `Hill_fnc_transferVAtoAA`
+  - Removes file `functions\29th_Training\fn_transferVAtoAA.sqf`
+  - Alters file `functions\29th_Training\CfgFunctions.hpp`
+  - Alters file `scripts\baseObjectInit.sqf`
+* Added removal of radios from dead players
+  - Adds mission parameter to toggle on or off at mission start
+    - **Default setting is ON to remove radios from dead players**
+  - Adds file `functions\29th_Training\fn_removeRadios.sqf`
+  - Alters file `functions\29th_Training\CfgFunctions.hpp`
+  - Alters file `data\params.hpp`
+* Added an event handler to display a message in the server .rpt file when a player opens the curator interface
+  - Alters file `scripts\init_curators.sqf`
+
+
+---
+v3.8
+8 SEP 2018
 
 ---
 
@@ -10,7 +68,7 @@ v3.8
 * Removed reference to `scripts\recognise.sqf` from `initPlayerLocal.sqf`
   - Script didn't exist in folder and this is done server side now anyway
 * Removed `functions\29th_Training\fn_activateAddons.sqf`
-  - This failed attempt at wizardry is obsolete
+  - This failed attempt at wizardry is FUBAR so I'm throwing it out to forget about it
 * Removed `functions\29th_Training\fn_playerAdmin.sqf`
   - This wizardry is obsolete
 * Added curator assignment check to (hopefully) fix having to respawn for curator access
@@ -23,9 +81,23 @@ v3.8
 * Changed addAction for spectator terminals, arsenal ammo boxes, and garbage cans in `scripts\baseObjectsInit.sqf`
   - Removed the condition parameter check for caller's distance to object and replaced with radius parameter
 * Removed obsolete argument variable from function `functions\29th_Training\fn_cleaner.sqf`
+* Changed the way negative player ratings were handled
+  - Added `handleRating` event handler in `playerInitLocal.sqf`
+  - Removed `functions\29th_Training\fn_adjustRating.sqf`
+* Changed `scripts\player_arsenal_handlers.sqf` from using in-line functions to registered functions
+  - Added `functions\29th_Traning\fn_addRadio.sqf`
+  - Added `functions\29th_Training\fn_arsenalClosed.sqf`
+* Added `Require CBA` module because CBA is required...
+* Added player stats tracking at spectate box.
+  - shots fired
+  - targets hit (men only; AI and Human)
+  - Accuracy
+  - deaths
+  - `scripts\checkStats.sqf`
+  - `scripts\stats.sqf`
 
 ---
-v3.7  
+v3.7
 29 AUG 2018
 
 ---
@@ -37,7 +109,7 @@ v3.7
   - Removed action menu items for `Transfer VA to AA` and `Virtual Arsenal` if Ace is running
 
 ---
-v3.6  
+v3.6
 19 JAN 2018
 
 ---
@@ -53,7 +125,7 @@ v3.6
   - Changed loop time from 5 sec. to 3 sec.
 
 ---
-v3.6  
+v3.6
 14 JAN 2018
 
 ---

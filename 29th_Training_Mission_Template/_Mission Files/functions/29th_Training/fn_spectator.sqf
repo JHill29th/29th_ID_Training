@@ -54,6 +54,7 @@ cutText ["SPECTATOR\n----------\nPress RELOAD to exit","PLAIN DOWN"]; // Tell pl
 hintSilent "SPECTATOR\n----------\nPress RELOAD to exit";  // Tell player they are spectating
 
 [player, true] remoteExec ["hideObjectGlobal", 0];
+uiSleep 1;
 player enableSimulation false;
 
 ["exitSpect", "onEachFrame", {

@@ -127,7 +127,7 @@ if (isNil "disabledTI") then {
     } forEach allCurators;
   };
 };
-/*
+
 //	Used with Stats system
 {
 	addAI_hitDetection = _x addEventHandler ["CuratorObjectPlaced", {
@@ -142,4 +142,13 @@ if (isNil "disabledTI") then {
 		};
 	}];
 } forEach allCurators;
-*/
+
+{
+  curatorEnteredLog = _x addEventHandler ["CuratorObjectRegistered", {
+    params ["_curator"];
+    _curatorObj = getAssignedCuratorUnit _curator;
+    _curatorName = name _curatorObj;
+    _msg = text format ["CURATOR INTERFACE OPENED:  %1",_curatorName];
+    _msg remoteExec ["diag_log",2];
+  }];
+} forEach allCurators;

@@ -40,24 +40,9 @@ enableEnvironment [false, true];
 
 [_theClient] execVM "scripts\player_arsenal_handlers.sqf";
 
-_theClient addEventHandler ["HandleRating", {
-	params ["_unit"];
-    if (rating _unit < 0) then {
-     [0,_unit] call Hill_fnc_adjustRating;
-    };
-}];
+//maintains a neutral rating in the event of "accidental" team kills
+_theClient addEventHandler ["HandleRating", {0}];
 
-/*
-[_theClient] spawn {
- private _theClient = _this select 0;
-  while {true} do {
-    if (rating _theClient <= -1000) then {
-     _theClient call Hill_fnc_adjustRating;
-    };
-  sleep 0.3;
-  };
-};
-*/
 //If the respawn menu button is active
 if (!isNumber (missionConfigFile >> "respawnButton") || {getNumber (missionConfigFile >> "respawnButton") > 0}) then {
   _respawnMenu = [] spawn {
@@ -77,7 +62,8 @@ _theClient call BIS_fnc_drawCuratorDeaths;
 _null = [] execVM "scripts\voice_control\voiceControl.sqf";
 
 //Initializes the player stats
-//[_theClient] execVM "scripts\Stats\init_stats.sqf";
+//Works with curatorObjectPlaced EH in scripts\init_curators.sqf
+[_theClient] execVM "scripts\init_stats.sqf";
 
 [_theClient] spawn {
   private ["_theMan"];
@@ -88,5 +74,5 @@ _null = [] execVM "scripts\voice_control\voiceControl.sqf";
     _theMan action ["WeaponOnBack", _theMan];
    };
  };
- 
-[_theClient] execVM "scripts\checkCuratorAssignment.sqf";
+
+//[_theClient] execVM "scripts\TFAR_eventHandlers.sqf";

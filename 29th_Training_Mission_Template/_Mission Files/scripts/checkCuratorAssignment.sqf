@@ -1,47 +1,44 @@
-params ["_theClient"];
+if !(isServer) exitWith {};
 
-switch (_theClient) do {
-  case (blu_co): {
-    [blu_co, zeus_co] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (blu_cs): {
-    [blu_cs, zeus_cs] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (blu_snco): {
-    [blu_snco, zeus_snco] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (ltc): {
-    [ltc, zeus_ltc] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (maj): {
-    [maj, zeus_maj] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (msgt): {
-    [msgt, zeus_msgt] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (blu_plt1_pl): {
-    [blu_plt1_pl, zeus_plt1_pl] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (blu_plt1_ps): {
-    [blu_plt1_ps, zeus_plt1_ps] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (blu_plt2_pl): {
-    [blu_plt2_pl, zeus_plt2_pl] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (blu_plt2_ps): {
-    [blu_plt2_ps, zeus_plt2_ps] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (red): {
-    [red, zeus_red] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (red_1): {
-    [red_1, zeus_red_1] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (grn): {
-    [grn, zeus_grn] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  case (grn_1): {
-    [grn_1, zeus_grn_1] remoteExec ["Hill_fnc_assignCurator",2];
-  };
-  default {};
+if (!isNil "blu_co") then {
+  [blu_co, zeus_co] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "blu_cs") then {
+  [blu_cs, zeus_cs] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "blu_snco") then {
+  [blu_snco, zeus_snco] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "ltc") then {
+  [ltc, zeus_ltc] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "maj") then {
+  [maj, zeus_maj] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "msgt") then {
+  [msgt, zeus_msgt] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "blu_plt1_pl") then {
+  [blu_plt1_pl, zeus_plt1_pl] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "blu_plt1_ps") then {
+  [blu_plt1_ps, zeus_plt1_ps] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "blu_plt2_pl") then {
+  [blu_plt2_pl, zeus_plt2_pl] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "blu_plt2_ps") then {
+  [blu_plt2_ps, zeus_plt2_ps] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "red") then {
+  [red, zeus_red] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "red_1") then {
+  [red_1, zeus_red_1] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "grn") then {
+  [grn, zeus_grn] spawn Hill_fnc_assignCurator;
+};
+if (!isNil "grn_1") then {
+ [grn_1, zeus_grn_1] spawn Hill_fnc_assignCurator;
 };

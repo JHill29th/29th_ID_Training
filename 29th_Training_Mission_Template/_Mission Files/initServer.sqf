@@ -31,4 +31,8 @@ publicVariable "disabledTI";
 artilleryComputer = "artilleryComputer" call BIS_fnc_getParamValue;
 publicVariable "artilleryComputer";
 
+//removeRadiosFromDead = "removeRadiosFromDead" call BIS_fnc_getParamValue;
+//publicVariable "removeRadiosFromDead";
+
 execVM "scripts\excludeObjFromZeus.sqf";
+execVM "scripts\checkCuratorAssignment.sqf";

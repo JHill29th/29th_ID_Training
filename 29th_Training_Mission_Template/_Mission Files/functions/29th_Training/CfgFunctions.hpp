@@ -6,10 +6,13 @@ class 29th_Training {
     class spectator {};
     class cleaner {};
     class setInsignia {};
-    class transferVAtoAA {};
     class handleInitialInventory {};
     class noThermals {};
-    class adjustRating {};
     class assignCurator {};
+    class addRadio {};
+    //class randomizeRadioHz {};
+    class arsenalClosed {};
+    class checkStats {};
+    class removeRadio {};
   };
 };
